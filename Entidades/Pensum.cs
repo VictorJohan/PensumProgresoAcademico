@@ -18,7 +18,7 @@ namespace PensumProgresoAcademico.Entidades
         public int PensumHorasTeoricas { get; set; }
         public int PensumCreditos { get; set; }
 
-        [ForeignKey("SemestreId")]
-        public virtual List<Semestres> Semestres { get; set; } = new List<Semestres>();
+        [ForeignKey("PensumId")]
+        public virtual List<PensumDetalle> PensumDetalles { get; set; } = new List<PensumDetalle>();
     }
 }

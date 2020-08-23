@@ -17,6 +17,7 @@ namespace PensumProgresoAcademico.Entidades
         public int HorasTeoricasPendientes { get; set; }
         public int CreditosPendientes { get; set; }
         public int PensumId { get; set; }
+
         [ForeignKey("PensumId")]
         public Pensum Pensum { get; set; }
     }

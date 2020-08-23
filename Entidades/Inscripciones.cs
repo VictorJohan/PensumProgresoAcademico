@@ -6,10 +6,10 @@ using System.Text;
 
 namespace PensumProgresoAcademico.Entidades
 {
-    public class Matriculas
+    public class Inscripciones
     {
         [Key]
-        public int IdMatricula { get; set; }
+        public int InscripcionId { get; set; }
         public int Matricula { get; set; }
         public int CreditosSelccionados { get; set; }
         public int CantidadMateria { get; set; }
@@ -18,8 +18,8 @@ namespace PensumProgresoAcademico.Entidades
         [ForeignKey("Matricula")]
         public Estudiantes Estudiante { get; set; }
 
-        [ForeignKey("IdMatricula")]
-        public virtual List<Materias> Materias { get; set; } = new List<Materias>();
+        [ForeignKey("InscripcionId")]
+        public virtual List<InscripcionesDetalle> InscripcionesDetalles { get; set; } = new List<InscripcionesDetalle>();
 
     }
 }

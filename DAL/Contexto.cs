@@ -9,7 +9,7 @@ namespace PensumProgresoAcademico.DAL
     public class Contexto : DbContext
     {
         public DbSet<Pensum> Pensums { get; set; }
-        public DbSet<Matriculas> Matriculas { get; set; }
+        public DbSet<Inscripciones> Matriculas { get; set; }
         public DbSet<Estudiantes> Estudiantes { get; set; }
         public DbSet<Materias> Materias { get; set; }
 
