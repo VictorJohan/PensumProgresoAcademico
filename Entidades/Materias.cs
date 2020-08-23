@@ -9,7 +9,6 @@ namespace PensumProgresoAcademico.Entidades
     {
         [Key]
         public string Clave { get; set; }
-        public int SemestreId { get; set; }
         public int IdMatricula { get; set; }
         public string Descripcion { get; set; }
         public byte HorasPracticas { get; set; }

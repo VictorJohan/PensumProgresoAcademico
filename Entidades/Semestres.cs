@@ -9,14 +9,12 @@ namespace PensumProgresoAcademico.Entidades
     public class Semestres
     {
         [Key]
-        public int Id { get; set; }
-        public int PensumId { get; set; }
         public int SemestreId { get; set; }
         public byte TotalHorasPracticas { get; set; }
         public byte TotalHorasTeoricas { get; set; }
         public byte TotalCreditos { get; set; }
 
-        [ForeignKey("SemestreId")]
+        [ForeignKey("Clave")]
         public virtual List<Materias> Materias { get; set; } = new List<Materias>();
     }
 }
