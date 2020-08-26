@@ -19,6 +19,7 @@
 
 	<ItemGroup>
 	  <Folder Include="DATA\" />
+	  <Folder Include="UI\Consultas\" />
 	</ItemGroup>
 
 	<ItemGroup>
