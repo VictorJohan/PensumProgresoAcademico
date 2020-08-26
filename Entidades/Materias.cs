@@ -13,6 +13,6 @@ namespace PensumProgresoAcademico.Entidades
         public byte HorasPracticas { get; set; }
         public byte HorasTeoricas { get; set; }
         public byte Creditos { get; set; }
-        public string Prerequisitos { get; set; }
+        
     }
 }

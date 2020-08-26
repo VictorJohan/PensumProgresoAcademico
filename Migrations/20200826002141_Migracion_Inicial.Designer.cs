@@ -9,8 +9,8 @@ using PensumProgresoAcademico.DAL;
 namespace PensumProgresoAcademico.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200823232703_Migracion_Inicaial")]
-    partial class Migracion_Inicaial
+    [Migration("20200826002141_Migracion_Inicial")]
+    partial class Migracion_Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -115,9 +115,6 @@ namespace PensumProgresoAcademico.Migrations
                     b.Property<byte>("HorasTeoricas")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Prerequisitos")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Clave");
 
                     b.ToTable("Materias");
@@ -166,6 +163,9 @@ namespace PensumProgresoAcademico.Migrations
 
                     b.Property<int>("PensumId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Prerequisitos")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

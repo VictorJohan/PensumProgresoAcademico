@@ -10,6 +10,7 @@ namespace PensumProgresoAcademico.Entidades
         public int Id { get; set; }
         public int PensumId { get; set; }
         public string Clave { get; set; }
+        public string Prerequisitos { get; set; }
 
         [ForeignKey("Clave")]
         public Materias Materia { get; set; }

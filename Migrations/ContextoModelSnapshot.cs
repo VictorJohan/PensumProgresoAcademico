@@ -113,9 +113,6 @@ namespace PensumProgresoAcademico.Migrations
                     b.Property<byte>("HorasTeoricas")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Prerequisitos")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Clave");
 
                     b.ToTable("Materias");
@@ -164,6 +161,9 @@ namespace PensumProgresoAcademico.Migrations
 
                     b.Property<int>("PensumId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Prerequisitos")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

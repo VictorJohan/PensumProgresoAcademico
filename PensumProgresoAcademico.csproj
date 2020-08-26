@@ -21,4 +21,10 @@
 	  <Folder Include="DATA\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="DATA\PensumProgresoAcademico.db">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>

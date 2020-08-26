@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PensumProgresoAcademico.Migrations
 {
-    public partial class Migracion_Inicaial : Migration
+    public partial class Migracion_Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,8 +15,7 @@ namespace PensumProgresoAcademico.Migrations
                     Descripcion = table.Column<string>(nullable: true),
                     HorasPracticas = table.Column<byte>(nullable: false),
                     HorasTeoricas = table.Column<byte>(nullable: false),
-                    Creditos = table.Column<byte>(nullable: false),
-                    Prerequisitos = table.Column<string>(nullable: true)
+                    Creditos = table.Column<byte>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -74,7 +73,8 @@ namespace PensumProgresoAcademico.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     PensumId = table.Column<int>(nullable: false),
-                    Clave = table.Column<string>(nullable: true)
+                    Clave = table.Column<string>(nullable: true),
+                    Prerequisitos = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
