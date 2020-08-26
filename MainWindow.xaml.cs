@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PensumProgresoAcademico.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,8 @@ namespace PensumProgresoAcademico
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            rEstudiantes rEstudiantes = new rEstudiantes();
+            rEstudiantes.Show();
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)

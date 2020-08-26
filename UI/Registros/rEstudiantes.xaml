@@ -5,9 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Estudiantes" Height="450" Width="800">
+        Title="Registro Estudiantes" Height="340" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <!--Label Matricula-->
+            <Label Content="Matrícula" FontSize="11"/>
+
+            <!--TextBox/Boton Buscar-->
+            <StackPanel Orientation="Horizontal">
+                <!--TextBox-->
+                <TextBox Name="MatriculaTextBox" Text="{Binding Matricula}" Width="498" Height="20" HorizontalAlignment="Left" Margin="5,0"/>
+                <!--Boton-->
+                <Button Name="BuscarButton" Height="20" Width="60" Click="BuscarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Buscar" FontSize="11" Padding="5,0,5,1"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            
+            <!--Nombres-->
+            <Label Content="Nombres" FontSize="11"/>
+            <TextBox Name="NombresTextBox" Text="{Binding Nombres}" Height="20" Width="563" HorizontalAlignment="Left" Margin="5,0"/>
+
+            <!--Pensun Id-->
+            <Label Content="Pensum" FontSize="11"/>
+            <ComboBox Name="PensumComboBox" Height="20" Width="563" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,0" Padding="6,0,5,0"/>
+
+            <!--Fecha de Ingreso-->
+            <Label Content="Fecha Ingreso" FontSize="11"/>
+            <DatePicker Name="FechaIngresoDatePicker" SelectedDate="{Binding FechaIngreso}" Height="20" Width="563" HorizontalAlignment="Left" Margin="5,0" Padding="2,0,2,0"/>
+
+            <!--Panel de Labels-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Materias Pendientes" FontSize="11"/>
+                <Label Content="Creditos Pendientes" FontSize="11" Margin="35,0,0,0"/>
+                <Label Content="Horas Practicas Pendientes" FontSize="11" Margin="36,0,0,0"/>
+                <Label Content="Horas Teoricas Pendientes" FontSize="11" Margin="3,0,0,0"/>
+            </StackPanel>
+            
+            <!--Panel de TextBox-->
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="MateriasPendientesTextBox" Text="{Binding MateriasPendientes}" IsReadOnly="True" Height="20" Width="133" HorizontalAlignment="Left" Margin="5,0"/>
+                <TextBox Name="CreditosPendientesTextBox" Text="{Binding CreditosPendientes}" IsReadOnly="True" Height="20" Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+                <TextBox Name="HorasPracticasPendientesTextBox" Text="{Binding HorasPracticasPendientes}" IsReadOnly="True" Height="20" Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+                <TextBox Name="HorasTeoricasPendientesTextBox" Text="{Binding HorasTeoricasPendientes}" IsReadOnly="True" Height="20" Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+            </StackPanel>
+
+            <!--Panel de botones-->
+            <StackPanel Orientation="Horizontal" Width="200" Margin="0, 30">
+                <!--Nuevo-->
+                <Button Name="NuevoButton" Height="20" Width="60" Click="NuevoButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Nuevo" FontSize="11" Padding="5,0,5,1"/>
+                    </StackPanel>
+                </Button>
+                
+                <!--Guardar-->
+                <Button Name="GuardarButton" Height="20" Width="60" Click="GuardarButton_Click" Margin="5,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Guardar" FontSize="11" Padding="5,0,5,1"/>
+                    </StackPanel>
+                </Button>
+
+                <!--Eliminar-->
+                <Button Name="EliminarButton" Height="20" Width="60" Click="EliminarButton_Click" Margin="5,0,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Eliminar" FontSize="11" Padding="5,0,5,1"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
             
         </StackPanel>
     </Grid>
