@@ -6,33 +6,34 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Estudiantes" Height="340" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registro Estudiantes" Height="390" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
            
             <!--TextBox/Boton Buscar-->
             <StackPanel Orientation="Horizontal">
                 <!--TextBox-->
-                <TextBox Name="MatriculaTextBox" Text="{Binding Matricula}" Width="498" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Matrícula" materialDesign:HintAssist.IsFloating="True" />
+                <TextBox Name="MatriculaTextBox" Text="{Binding Matricula}" FontSize="20" Width="498" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Matrícula" materialDesign:HintAssist.IsFloating="True" />
                 <!--Boton-->
                 <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
             </StackPanel>
 
-            <TextBox Name="NombresTextBox" Text="{Binding Nombres}" Width="563" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Nombres" materialDesign:HintAssist.IsFloating="True"/>
+            <!--Nombres-->
+            <TextBox Name="NombresTextBox" Text="{Binding Nombres}" FontSize="20" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Nombres" materialDesign:HintAssist.IsFloating="True"/>
 
             <!--Pensum-->
-            <Label Content="Pensum" Foreground="Black" FontSize="11"/>
+            <Label Content="Pensum" Foreground="Black" FontSize="15" Margin="0,5,0,0"/>
             <ComboBox Name="PensumComboBox" Width="563" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,0" Padding="0,0,5,0"/>
 
             <!--Fecha de ingreso-->
-            <Label Content="Fecha Ingreso" Foreground="Black" FontSize="11"/>
+            <Label Content="Fecha Ingreso" Foreground="Black" FontSize="15" Margin="0,5,0,0"/>
             <DatePicker Name="FechaIngresoDatePicker" SelectedDate="{Binding FechaIngreso}" Width="563" HorizontalAlignment="Left" Margin="5,0" Padding="2,0,2,0"/>
 
             <!--Panel de Labels-->
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                 <Label Content="Materias Pendientes" Foreground="Black" FontSize="11"/>
                 <Label Content="Creditos Pendientes" FontSize="11" Foreground="Black" Margin="35,0,0,0"/>
-                <Label Content="Horas Practicas Pendientes" Foreground="Black" FontSize="11" Margin="36,0,0,0"/>
+                <Label Content="Horas Practicas Pendientes" Foreground="Black" FontSize="11" Margin="39,0,0,0"/>
                 <Label Content="Horas Teoricas Pendientes" Foreground="Black" FontSize="11" Margin="3,0,0,0"/>
             </StackPanel>
             

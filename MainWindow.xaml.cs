@@ -1,4 +1,5 @@
 ﻿using PensumProgresoAcademico.UI.Registros;
+using PensumProgresoAcademico.UI.Registros.rMaterias;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,8 @@ namespace PensumProgresoAcademico
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-
+            rMaterias rMaterias = new rMaterias();
+            rMaterias.Show();
         }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
