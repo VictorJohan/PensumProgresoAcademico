@@ -3,76 +3,56 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Registros"
         mc:Ignorable="d"
         Title="Registro Estudiantes" Height="340" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
-            <!--Label Matricula-->
-            <Label Content="Matrícula" FontSize="11"/>
-
+           
             <!--TextBox/Boton Buscar-->
             <StackPanel Orientation="Horizontal">
                 <!--TextBox-->
-                <TextBox Name="MatriculaTextBox" Text="{Binding Matricula}" Width="498" Height="20" HorizontalAlignment="Left" Margin="5,0"/>
+                <TextBox Name="MatriculaTextBox" Text="{Binding Matricula}" Width="498" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Matrícula" materialDesign:HintAssist.IsFloating="True" />
                 <!--Boton-->
-                <Button Name="BuscarButton" Height="20" Width="60" Click="BuscarButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Buscar" FontSize="11" Padding="5,0,5,1"/>
-                    </StackPanel>
-                </Button>
+                <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
             </StackPanel>
-            
-            <!--Nombres-->
-            <Label Content="Nombres" FontSize="11"/>
-            <TextBox Name="NombresTextBox" Text="{Binding Nombres}" Height="20" Width="563" HorizontalAlignment="Left" Margin="5,0"/>
 
-            <!--Pensun Id-->
-            <Label Content="Pensum" FontSize="11"/>
-            <ComboBox Name="PensumComboBox" Height="20" Width="563" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,0" Padding="6,0,5,0"/>
+            <TextBox Name="NombresTextBox" Text="{Binding Nombres}" Width="563" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Nombres" materialDesign:HintAssist.IsFloating="True"/>
 
-            <!--Fecha de Ingreso-->
-            <Label Content="Fecha Ingreso" FontSize="11"/>
-            <DatePicker Name="FechaIngresoDatePicker" SelectedDate="{Binding FechaIngreso}" Height="20" Width="563" HorizontalAlignment="Left" Margin="5,0" Padding="2,0,2,0"/>
+            <!--Pensum-->
+            <Label Content="Pensum" Foreground="Black" FontSize="11"/>
+            <ComboBox Name="PensumComboBox" Width="563" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,0" Padding="0,0,5,0"/>
+
+            <!--Fecha de ingreso-->
+            <Label Content="Fecha Ingreso" Foreground="Black" FontSize="11"/>
+            <DatePicker Name="FechaIngresoDatePicker" SelectedDate="{Binding FechaIngreso}" Width="563" HorizontalAlignment="Left" Margin="5,0" Padding="2,0,2,0"/>
 
             <!--Panel de Labels-->
             <StackPanel Orientation="Horizontal">
-                <Label Content="Materias Pendientes" FontSize="11"/>
-                <Label Content="Creditos Pendientes" FontSize="11" Margin="35,0,0,0"/>
-                <Label Content="Horas Practicas Pendientes" FontSize="11" Margin="36,0,0,0"/>
-                <Label Content="Horas Teoricas Pendientes" FontSize="11" Margin="3,0,0,0"/>
+                <Label Content="Materias Pendientes" Foreground="Black" FontSize="11"/>
+                <Label Content="Creditos Pendientes" FontSize="11" Foreground="Black" Margin="35,0,0,0"/>
+                <Label Content="Horas Practicas Pendientes" Foreground="Black" FontSize="11" Margin="36,0,0,0"/>
+                <Label Content="Horas Teoricas Pendientes" Foreground="Black" FontSize="11" Margin="3,0,0,0"/>
             </StackPanel>
             
             <!--Panel de TextBox-->
             <StackPanel Orientation="Horizontal">
-                <TextBox Name="MateriasPendientesTextBox" Text="{Binding MateriasPendientes}" IsReadOnly="True" Height="20" Width="133" HorizontalAlignment="Left" Margin="5,0"/>
-                <TextBox Name="CreditosPendientesTextBox" Text="{Binding CreditosPendientes}" IsReadOnly="True" Height="20" Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
-                <TextBox Name="HorasPracticasPendientesTextBox" Text="{Binding HorasPracticasPendientes}" IsReadOnly="True" Height="20" Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
-                <TextBox Name="HorasTeoricasPendientesTextBox" Text="{Binding HorasTeoricasPendientes}" IsReadOnly="True" Height="20" Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+                <TextBox Name="MateriasPendientesTextBox" Text="{Binding MateriasPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" Margin="5,0"/>
+                <TextBox Name="CreditosPendientesTextBox" Text="{Binding CreditosPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+                <TextBox Name="HorasPracticasPendientesTextBox" Text="{Binding HorasPracticasPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+                <TextBox Name="HorasTeoricasPendientesTextBox" Text="{Binding HorasTeoricasPendientes}" IsReadOnly="True"  Width="133" HorizontalAlignment="Left" Margin="5,0,5,0"/>
             </StackPanel>
 
             <!--Panel de botones-->
-            <StackPanel Orientation="Horizontal" Width="200" Margin="0, 30">
+            <StackPanel Orientation="Horizontal" Width="223" Margin="0, 30">
                 <!--Nuevo-->
-                <Button Name="NuevoButton" Height="20" Width="60" Click="NuevoButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Nuevo" FontSize="11" Padding="5,0,5,1"/>
-                    </StackPanel>
-                </Button>
-                
-                <!--Guardar-->
-                <Button Name="GuardarButton" Height="20" Width="60" Click="GuardarButton_Click" Margin="5,0,0,0">
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Guardar" FontSize="11" Padding="5,0,5,1"/>
-                    </StackPanel>
-                </Button>
+                <Button Name="NuevoButton" Content="Nuevo" Background="Snow" FontSize="11" Height="20" Click="NuevoButton_Click" Padding="16,1,16,4"/>
 
+                <!--Guardar-->
+                <Button Name="GuardarButton" Height="20" Background="Snow" Content="Guardar" FontSize="11" Padding="16,1,16,4" Click="GuardarButton_Click" Margin="5,0,0,0"/>
                 <!--Eliminar-->
-                <Button Name="EliminarButton" Height="20" Width="60" Click="EliminarButton_Click" Margin="5,0,0,0">
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Eliminar" FontSize="11" Padding="5,0,5,1"/>
-                    </StackPanel>
-                </Button>
+                <Button Name="EliminarButton" Height="20" Background="Snow" Content="Eliminar" FontSize="11" Padding="16,1,16,4" Click="EliminarButton_Click" Margin="5,0,0,0"/>
 
             </StackPanel>
             
