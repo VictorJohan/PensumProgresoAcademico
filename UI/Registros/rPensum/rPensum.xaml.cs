@@ -189,6 +189,7 @@ namespace PensumProgresoAcademico.UI.Registros.rPensum
             Pensum.PensumHorasPracticas += horasPracticas;
             Pensum.PensumHorasTeoricas += horasTeoricas;
             Pensum.PensumCreditos += creditos;
+            Pensum.TotalMaterias++;
 
         }
 
@@ -198,6 +199,7 @@ namespace PensumProgresoAcademico.UI.Registros.rPensum
             Pensum.PensumHorasPracticas -= horasPracticas;
             Pensum.PensumHorasTeoricas -= horasTeoricas;
             Pensum.PensumCreditos -= creditos;
+            Pensum.TotalMaterias--;
 
         }
 

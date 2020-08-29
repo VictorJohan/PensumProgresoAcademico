@@ -19,6 +19,6 @@ namespace PensumProgresoAcademico.Entidades
         public int PensumId { get; set; }
 
         [ForeignKey("PensumId")]
-        public Pensum Pensum { get; set; }
+        public Pensum Pensum { get; set; }//todo: Puede que esta propiedad no se necesite
     }
 }

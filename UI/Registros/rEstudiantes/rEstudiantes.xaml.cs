@@ -20,7 +20,7 @@ namespace PensumProgresoAcademico.UI.Registros
     /// </summary>
     public partial class rEstudiantes : Window
     {
-        
+
         private Estudiantes Estudiante = new Estudiantes();
         public rEstudiantes()
         {
@@ -56,10 +56,12 @@ namespace PensumProgresoAcademico.UI.Registros
         {
             if (!Validar())
                 return;
+            if (!Confirmacion())
+                return;
 
             if (EstudiantesBLL.Guardar(Estudiante))
             {
-                MessageBox.Show("Se ha registrado el estudiante.", "Aviso.",
+                MessageBox.Show("Guardado.", "Aviso.",
                    MessageBoxButton.OK, MessageBoxImage.Information);
                 Limpiar();
             }
@@ -127,7 +129,7 @@ namespace PensumProgresoAcademico.UI.Registros
             }
 
             //Valida que se selecione un pensum
-            if(PensumComboBox.SelectedIndex == -1)
+            if (PensumComboBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Seleccione un Pensum.", "Aviso.",
                    MessageBoxButton.OK, MessageBoxImage.Information);
@@ -136,7 +138,7 @@ namespace PensumProgresoAcademico.UI.Registros
 
             //Valida la relacion entre la matricula y la fecha de ingreso.
             int ingreso = FechaIngresoDatePicker.SelectedDate.Value.Year;
-            if(año != ingreso)
+            if (año != ingreso)
             {
                 MessageBox.Show("Ejemplo de matrícula: 20170122.\nLos primeros 4 digitos de una matrícula" +
                        " componen el año de ingreso del alumno y los ultimos 4 digitos son para diferenciar a los alumnos que " +
@@ -147,5 +149,48 @@ namespace PensumProgresoAcademico.UI.Registros
             }
             return true;
         }
+
+        private void PensumComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PensumComboBox.SelectedIndex == -1)
+                return;
+            Pensum pensum = (Pensum)PensumComboBox.SelectedItem;
+
+            Estudiante.CreditosPendientes = pensum.PensumCreditos;
+            Estudiante.HorasPracticasPendientes = pensum.PensumHorasPracticas;
+            Estudiante.HorasTeoricasPendientes = pensum.PensumHorasTeoricas;
+            Estudiante.MateriasPendientes = pensum.TotalMaterias;
+
+
+        }
+
+        public bool Confirmacion()
+        {
+            if (EstudiantesBLL.Existe(int.Parse(MatriculaTextBox.Text)))
+            {
+                var estudiante = EstudiantesBLL.Buscar(int.Parse(MatriculaTextBox.Text));
+
+                if (estudiante.PensumId != int.Parse(PensumComboBox.SelectedValue.ToString()))
+                {
+                    if (MessageBox.Show($"Si cambias de pensum se perderá de forma permanente el registro de progreso del pensum " +
+                       "anterior y deberas realizar las inscripciones correspondientes de las materias del" +
+                       " pensum que seleccionaste ahora.\n¿Cambiar pensum?", "Advertencia.", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        return true;
+                    }
+
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+            return true;
+
+        }
+
+
     }
 }
