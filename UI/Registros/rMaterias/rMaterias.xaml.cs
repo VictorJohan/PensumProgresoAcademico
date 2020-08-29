@@ -27,21 +27,6 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             this.DataContext = Materia;
         }
 
-        private void BuscarButton_Click(object sender, RoutedEventArgs e)
-        {
-            var encontrado = MateriasBLL.Buscar(ClaveTextBox.Text);
-            if(encontrado != null)
-            {
-                Materia = encontrado;
-                this.DataContext = Materia;
-            }
-            else
-            {
-                MessageBox.Show("No hay un registros con esta esta clave.", "No se encontro la materia.",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
-
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
