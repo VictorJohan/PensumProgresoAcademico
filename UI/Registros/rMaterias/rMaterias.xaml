@@ -10,11 +10,11 @@
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--TextBox Clave y Boton Buscar-->
-            <StackPanel Orientation="Horizontal">
-                <TextBox Name="ClaveTextBox" Width="485" Text="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" TextChanged="ClaveTextBox_TextChanged"/>
-                <Button Name="BuscarButton" Height="20" Content="Buscar" Background="Snow" FontSize="11" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
-            </StackPanel>
-            
+
+            <TextBox Name="ClaveTextBox" Width="550" Text="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" TextChanged="ClaveTextBox_TextChanged"/>
+
+
+
             <!--Descripcion-->
             <TextBox Name="DescripcionTextBox" Width="550" Text="{Binding Descripcion}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Descripción" materialDesign:HintAssist.IsFloating="True"/>
 

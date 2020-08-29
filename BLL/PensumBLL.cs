@@ -49,6 +49,10 @@ namespace PensumProgresoAcademico.BLL
 
             try
             {
+                foreach (var item in pensum.PensumDetalles)
+                {
+                    contexto.Entry(item.Materia).State = EntityState.Modified;
+                }
                 contexto.Pensum.Add(pensum);
                 ok = contexto.SaveChanges() > 0;
             }
@@ -124,7 +128,7 @@ namespace PensumProgresoAcademico.BLL
             try
             {
                 var elemento = contexto.Pensum.Find(id);
-                if(elemento != null)
+                if (elemento != null)
                 {
                     contexto.Entry(elemento).State = EntityState.Deleted;
                     ok = contexto.SaveChanges() > 0;
