@@ -3,6 +3,7 @@ using PensumProgresoAcademico.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -38,7 +39,25 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Regex.IsMatch(InscripcionIdTextBox.Text, "^[1-9]+${1,5}"))
+            {
+                MessageBox.Show("El Id que ha ingresado no es válido.\nVerifique que haya ingresado un caracter numerico y que este " +
+                    "sea diferente de cero.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
+            var encontrado = InscripcionesBLL.Buscar(int.Parse(InscripcionIdTextBox.Text));
+
+            if (encontrado != null)
+            {
+                Inscripcion = encontrado;
+                this.DataContext = Inscripcion;
+            }
+            else
+            {
+                MessageBox.Show("No hay una inscripción con este Id.", "No se encontro la Inscripción.",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void AgregarButton_Click(object sender, RoutedEventArgs e)
@@ -54,6 +73,8 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
             detalle.Materia = (Materias)MateriaComboBox.SelectedItem;
             Inscripcion.InscripcionesDetalles.Add(detalle);
+            Inscripcion.CantidadMateria++;
+            Inscripcion.CreditosSelccionados += detalle.Materia.Creditos;
             Cargar();
         }
 
@@ -64,17 +85,44 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Limpiar();
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (InscripcionesBLL.Guardar(Inscripcion))
+            {
+                MessageBox.Show("Guardado.", "Exito.",
+                   MessageBoxButton.OK, MessageBoxImage.Information);
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Algo salió mal, no se logró guardar la inscripción.", "Error.",
+                   MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Regex.IsMatch(InscripcionIdTextBox.Text, "^[1-9]+${1,5}"))
+            {
+                MessageBox.Show("El Id que ha ingresado no es válido.\nVerifique que haya ingresado un caracter numerico y que este " +
+                    "sea diferente de cero.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
+            if (PensumBLL.Eliminar(int.Parse(InscripcionIdTextBox.Text)))
+            {
+                MessageBox.Show("Inscripción eliminada.", "Aviso.",
+                   MessageBoxButton.OK, MessageBoxImage.Information);
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Algo salió mal, no se logró eliminar la inscripción.", "Error.",
+                   MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 
@@ -90,6 +138,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
                 return;
 
             var estudiante = (Estudiantes)MatriculaComboBox.SelectedItem;
+            Inscripcion.Estudiante = estudiante;
             MateriaComboBox.ItemsSource = PensumBLL.GetPensumMaterias(estudiante.PensumId);
         }
 
@@ -100,6 +149,12 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             HorasPracticasDetalleTextBox.Text = Materia.HorasPracticas.ToString();
             HorasTeoricasDetalleTextBox.Text = Materia.HorasTeoricas.ToString();
             CreditosDetalleTextBox.Text = Materia.Creditos.ToString();
+        }
+
+        public void Limpiar()
+        {
+            Inscripcion = new Inscripciones();
+            this.DataContext = Inscripcion;
         }
     }
 }

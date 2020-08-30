@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Windows;
 
 namespace PensumProgresoAcademico.BLL
 {
@@ -45,9 +46,13 @@ namespace PensumProgresoAcademico.BLL
         {
             Contexto contexto = new Contexto();
             bool ok = false;
-
+            //todo: Afectar la tabla estudiante
             try
             {
+                foreach (var item in inscripcion.InscripcionesDetalles)
+                {
+                    contexto.Entry(item.Materia).State = EntityState.Modified;
+                }
                 contexto.Inscripciones.Add(inscripcion);
                 ok = contexto.SaveChanges() > 0;
             }
@@ -185,5 +190,7 @@ namespace PensumProgresoAcademico.BLL
 
             return lista;
         }
+
+        
     }
 }
