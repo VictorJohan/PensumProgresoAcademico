@@ -1,4 +1,5 @@
 ﻿using PensumProgresoAcademico.UI.Registros;
+using PensumProgresoAcademico.UI.Registros.rInscripciones;
 using PensumProgresoAcademico.UI.Registros.rMaterias;
 using PensumProgresoAcademico.UI.Registros.rPensum;
 using System;
@@ -36,7 +37,8 @@ namespace PensumProgresoAcademico
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-
+            rInscripciones rInscripciones = new rInscripciones();
+            rInscripciones.Show();
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)

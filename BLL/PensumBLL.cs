@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Windows;
 using System.Windows.Media;
 
 namespace PensumProgresoAcademico.BLL
@@ -155,6 +156,7 @@ namespace PensumProgresoAcademico.BLL
             try
             {
                 lista = contexto.Pensum.ToList();
+               
             }
             catch (Exception)
             {
@@ -190,5 +192,38 @@ namespace PensumProgresoAcademico.BLL
 
             return lista;
         }
+
+        public static List<Materias> GetPensumMaterias(int id)
+        {
+            Contexto contexto = new Contexto();
+            Pensum pensum = new Pensum();
+            List<Materias> lista = new List<Materias>();
+
+            try
+            {
+                if(id != 0)
+                {
+                    pensum = contexto.Pensum.Where(p => p.PensumId == id).Include(d => d.PensumDetalles).
+                    ThenInclude(m => m.Materia).SingleOrDefault();
+                    foreach (var item in pensum.PensumDetalles)
+                    {
+                        lista.Add(item.Materia);
+                    }
+                    lista.Sort((x, y) => x.Descripcion.CompareTo(y.Descripcion));
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return lista;
+        }
+
     }
 }

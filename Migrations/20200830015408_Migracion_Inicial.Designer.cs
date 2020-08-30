@@ -9,7 +9,7 @@ using PensumProgresoAcademico.DAL;
 namespace PensumProgresoAcademico.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200826002141_Migracion_Inicial")]
+    [Migration("20200830015408_Migracion_Inicial")]
     partial class Migracion_Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

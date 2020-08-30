@@ -1,0 +1,89 @@
+﻿<Window x:Class="PensumProgresoAcademico.UI.Registros.rInscripciones.rInscripciones"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Registros.rInscripciones"
+        mc:Ignorable="d"
+        Title="Registrar Inscripciones" Height="690" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <!--TextBox Inscripcion Id y Boton-->
+            <StackPanel Orientation="Horizontal">
+                <!--TextBox-->
+                <TextBox Name="InscripcionIdTextBox" Width="1085" FontSize="20" Text="{Binding InscripcionId}" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Inscripcion Id" materialDesign:HintAssist.IsFloating="True"/>
+                <!--Boton-->
+                <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
+            </StackPanel>
+            
+            <!--Matricula/Estudiante-->
+            <ComboBox Name="MatriculaComboBox" FontSize="20" SelectedValue="{Binding Matricula}" Margin="5,0" materialDesign:HintAssist.Hint="Estudiante" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MatriculaComboBox_SelectionChanged"/>
+
+            <!--Fecha-->
+            <DatePicker Name="FechaDatePicker" FontSize="20" SelectedDate="{Binding Fecha}"  Margin="5,0,5,0" materialDesign:HintAssist.Hint="Fecha Ingreso" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0"/>
+            
+            <!--Creditos-->
+            <TextBox Name="CreditosSelccionadosTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CreditosSelccionados}" Margin="5,0" materialDesign:HintAssist.Hint="Creditos Selccionados" materialDesign:HintAssist.IsFloating="True"/>
+
+            <!--Materias-->
+            <TextBox Name="CantidadMateriaTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CantidadMateria}"  Margin="5,0" materialDesign:HintAssist.Hint="Materias Selccionados" materialDesign:HintAssist.IsFloating="True"/>
+
+            <GroupBox Margin="5,10">
+                <GroupBox.Header>
+                    <Label Content="Inscripción Detalle" FontSize="15" Foreground="White"/>
+                </GroupBox.Header>
+                
+                <StackPanel Orientation="Vertical">
+
+                    <!--Panel de TextBox-->
+                    <StackPanel Orientation="Horizontal">
+                        <!--Materia-->
+                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged"/>
+                        <!--Horas Practicas-->
+                        <TextBox Name="HorasPracticasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0"/>
+
+                        <!--Horas Teoricas-->
+                        <TextBox Name="HorasTeoricasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Teoricas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0"/>
+
+                        <!--Horas Teoricas-->
+                        <TextBox Name="CreditosDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Creditos" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0"/>
+
+                        <!--Boton agregar-->
+                        <Button Name="AgregarButton" Height="20" Content="Agregar" Background="Snow"  FontSize="11" Click="AgregarButton_Click" Padding="16,1,16,4" Margin="10,23,0,0"/>
+
+                    </StackPanel>
+
+                    <!--DataGrid-->
+                    <DataGrid Name="DetalleDataGrid"  Height="160" AutoGenerateColumns="False" AlternatingRowBackground="#FF41CF41"
+                              ItemsSource="{Binding InscripcionesDetalles}" Margin="0,5,0,0" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Clave"  IsReadOnly="True" Binding="{Binding Clave}"/>
+                            <DataGridTextColumn Header="Descripción" Binding="{Binding Materia.Descripcion}"/>
+                            <DataGridTextColumn Header="Horas Practicas" Binding="{Binding Materia.HorasPracticas}"/>
+                            <DataGridTextColumn Header="Horas Teoricas" Binding="{Binding Materia.HorasTeoricas}"/>
+                            <DataGridTextColumn Header="Creditos" Binding="{Binding Materia.Creditos}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <!--Boton agregar-->
+                    <Button Name="RemoverButton" HorizontalAlignment="Left" Width="77" Height="20" Content="Remover" Background="Snow" BorderThickness="2" BorderBrush="Red" FontSize="11" Click="RemoverButton_Click" Padding="16,1,16,4" Margin="0,5,0,0"/>
+
+
+                </StackPanel>
+            </GroupBox>
+
+            <!--Panel de botones-->
+            <StackPanel Orientation="Horizontal" Width="223" Margin="0, 20">
+                <!--Nuevo-->
+                <Button Name="NuevoButton" Content="Nuevo" Background="Snow" FontSize="11" Height="20" Click="NuevoButton_Click" Padding="16,1,16,4"/>
+                <!--Guardar-->
+                <Button Name="GuardarButton" Height="20" Background="Snow" Content="Guardar" FontSize="11" Padding="16,1,16,4" Click="GuardarButton_Click" Margin="5,0,0,0"/>
+                <!--Eliminar-->
+                <Button Name="EliminarButton" Height="20" Background="Snow" Content="Eliminar" FontSize="11" Padding="16,1,16,4" Click="EliminarButton_Click" Margin="5,0,0,0"/>
+
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

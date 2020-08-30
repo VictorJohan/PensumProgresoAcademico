@@ -20,6 +20,6 @@ namespace PensumProgresoAcademico.Entidades
 
         [ForeignKey("InscripcionId")]
         public virtual List<InscripcionesDetalle> InscripcionesDetalles { get; set; } = new List<InscripcionesDetalle>();
-        //todo: Las materias para la inscripcion se tienen que tomar del pensum, arreglalo... Intenta llenar el combobox con el detalle de pensum.
+        
     }
 }

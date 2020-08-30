@@ -12,9 +12,9 @@ namespace PensumProgresoAcademico.Entidades
         [Key]
         public int Id { get; set; }
         public int InscripcionId { get; set; }
-        public string Clave { get; set; }//todo: Puedo que esta propiedad y la de la linea 18 no sea necesaria ya que las materias del pensum se pueden meter en un comboBox
+        public string Clave { get; set; }
 
         [ForeignKey("Clave")]
-        public Materias Materia { get; set; }
+        public virtual Materias Materia { get; set; }
     }
 }
