@@ -154,7 +154,8 @@ namespace PensumProgresoAcademico.UI.Registros
         {
             if (PensumComboBox.SelectedIndex == -1)
                 return;
-            if (!EstudiantesBLL.Existe(int.Parse(MatriculaTextBox.Text)))
+            var aux = EstudiantesBLL.Buscar(int.Parse(MatriculaTextBox.Text));
+            if (!EstudiantesBLL.Existe(int.Parse(MatriculaTextBox.Text)) || int.Parse(PensumComboBox.SelectedValue.ToString()) != aux.PensumId)
             {
                 Pensum pensum = (Pensum)PensumComboBox.SelectedItem;
 

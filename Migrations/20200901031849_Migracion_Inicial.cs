@@ -102,17 +102,18 @@ namespace PensumProgresoAcademico.Migrations
                     Matricula = table.Column<int>(nullable: false),
                     CreditosSelccionados = table.Column<int>(nullable: false),
                     CantidadMateria = table.Column<int>(nullable: false),
-                    Fecha = table.Column<DateTime>(nullable: false)
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    EstudianteMatricula = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Inscripciones", x => x.InscripcionId);
                     table.ForeignKey(
-                        name: "FK_Inscripciones_Estudiantes_Matricula",
-                        column: x => x.Matricula,
+                        name: "FK_Inscripciones_Estudiantes_EstudianteMatricula",
+                        column: x => x.EstudianteMatricula,
                         principalTable: "Estudiantes",
                         principalColumn: "Matricula",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -147,9 +148,9 @@ namespace PensumProgresoAcademico.Migrations
                 column: "PensumId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Inscripciones_Matricula",
+                name: "IX_Inscripciones_EstudianteMatricula",
                 table: "Inscripciones",
-                column: "Matricula");
+                column: "EstudianteMatricula");
 
             migrationBuilder.CreateIndex(
                 name: "IX_InscripcionesDetalle_Clave",

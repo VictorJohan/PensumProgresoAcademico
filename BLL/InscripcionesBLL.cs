@@ -46,7 +46,7 @@ namespace PensumProgresoAcademico.BLL
         {
             Contexto contexto = new Contexto();
             bool ok = false;
-            //todo: Afectar la tabla estudiante
+            
             try
             {
                 foreach (var item in inscripcion.InscripcionesDetalles)

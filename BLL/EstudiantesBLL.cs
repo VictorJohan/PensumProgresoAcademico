@@ -184,17 +184,27 @@ namespace PensumProgresoAcademico.BLL
 
         private static Estudiantes Restablecer(Estudiantes estudiantes)
         {
-            estudiantes.CreditosPendientes = estudiantes.Pensum.PensumCreditos;
-            estudiantes.MateriasPendientes = estudiantes.Pensum.TotalMaterias;
-            estudiantes.HorasPracticasPendientes = estudiantes.Pensum.PensumHorasPracticas;
-            estudiantes.HorasTeoricasPendientes = estudiantes.Pensum.PensumHorasTeoricas;
+            var aux = Buscar(estudiantes.Matricula);
+            if(aux.PensumId != estudiantes.PensumId)
+            {
+                Modificar(estudiantes);
+                EliminarInscripciones(estudiantes.Matricula);
+            }
+            else
+            {
+                estudiantes.CreditosPendientes = estudiantes.Pensum.PensumCreditos;
+                estudiantes.MateriasPendientes = estudiantes.Pensum.TotalMaterias;
+                estudiantes.HorasPracticasPendientes = estudiantes.Pensum.PensumHorasPracticas;
+                estudiantes.HorasTeoricasPendientes = estudiantes.Pensum.PensumHorasTeoricas;
+            }
+            
 
             return estudiantes;
         }
 
         private static Estudiantes Actualizar(Estudiantes estudiante)
         {
-            List<Inscripciones> Aux = InscripcionesBLL.GetInscripciones();
+            List<Inscripciones> Aux = InscripcionesBLL.GetInscripciones(i => i.Estudiante.PensumId == estudiante.PensumId);
             List<Materias> Aux2;
             foreach (var item in Aux)
             {
@@ -210,6 +220,15 @@ namespace PensumProgresoAcademico.BLL
             }
 
             return estudiante;
+        }
+
+        private static void EliminarInscripciones(int id)
+        {
+            List<Inscripciones> inscripciones = InscripcionesBLL.GetInscripciones(i => i.Matricula == id);
+            foreach (var item in inscripciones)
+            {
+                InscripcionesBLL.Eliminar(item.InscripcionId);
+            }
         }
     }
 }

@@ -15,8 +15,7 @@ namespace PensumProgresoAcademico.Entidades
         public int CantidadMateria { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
 
-        [ForeignKey("Matricula")]
-        public virtual Estudiantes Estudiante { get; set; }
+        public Estudiantes Estudiante { get; set; }
 
         [ForeignKey("InscripcionId")]
         public virtual List<InscripcionesDetalle> InscripcionesDetalles { get; set; } = new List<InscripcionesDetalle>();

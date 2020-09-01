@@ -120,7 +120,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
                 return;
             }
 
-            if (PensumBLL.Eliminar(int.Parse(InscripcionIdTextBox.Text)))
+            if (InscripcionesBLL.Eliminar(int.Parse(InscripcionIdTextBox.Text)))
             {
                 MessageBox.Show("Inscripción eliminada.", "Aviso.",
                    MessageBoxButton.OK, MessageBoxImage.Information);

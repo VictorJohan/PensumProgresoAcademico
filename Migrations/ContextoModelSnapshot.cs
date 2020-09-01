@@ -62,6 +62,9 @@ namespace PensumProgresoAcademico.Migrations
                     b.Property<int>("CreditosSelccionados")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("EstudianteMatricula")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("TEXT");
 
@@ -70,7 +73,7 @@ namespace PensumProgresoAcademico.Migrations
 
                     b.HasKey("InscripcionId");
 
-                    b.HasIndex("Matricula");
+                    b.HasIndex("EstudianteMatricula");
 
                     b.ToTable("Inscripciones");
                 });
@@ -187,9 +190,7 @@ namespace PensumProgresoAcademico.Migrations
                 {
                     b.HasOne("PensumProgresoAcademico.Entidades.Estudiantes", "Estudiante")
                         .WithMany()
-                        .HasForeignKey("Matricula")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EstudianteMatricula");
                 });
 
             modelBuilder.Entity("PensumProgresoAcademico.Entidades.InscripcionesDetalle", b =>
