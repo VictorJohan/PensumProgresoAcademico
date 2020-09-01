@@ -124,8 +124,17 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             //Valida el campo Horas Teoricas
             if (!Regex.IsMatch(HorasTeoricasTextBox.Text, "^[1-9]{1,2}"))
             {
-                MessageBox.Show("La cantidad de horas teoricas que ingresaste no es valida.", "Campos Horas Teoricas.",
+                MessageBox.Show("La cantidad de horas teoricas que ingresaste no es valida.", "Ya hay una materia con este nombre.",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            //Valida que no se creen dos materias con el mismo nombre
+            var existe = MateriasBLL.GetMaterias(m => m.Descripcion == DescripcionTextBox.Text);
+            if(existe != null)
+            {
+                MessageBox.Show($"El nombre de está materia ya existe, puede consultar la materia en el apartado de consultas.", 
+                    "Campos Horas Teoricas.", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 

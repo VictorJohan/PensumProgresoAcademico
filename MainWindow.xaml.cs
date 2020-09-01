@@ -24,7 +24,6 @@ namespace PensumProgresoAcademico
     /// </summary>
     public partial class MainWindow : Window
     {
-        //todo: Validar que no se creen dos materias con el mismo nombre.
         //todo: Crear con sultas.
         //todo: Documentar todo el proyecto.
         public MainWindow()
