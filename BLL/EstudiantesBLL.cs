@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Windows;
 
 namespace PensumProgresoAcademico.BLL
 {
@@ -16,7 +17,7 @@ namespace PensumProgresoAcademico.BLL
             if (!Existe(estudiante.Matricula))
                 return Insertar(estudiante);
             else
-                return Modificar(estudiante);
+                return Modificar(Restablecer(estudiante));
         }
 
         public static bool Existe(int matricula)
@@ -95,6 +96,7 @@ namespace PensumProgresoAcademico.BLL
             try
             {
                 estudiante = contexto.Estudiantes.Find(matricula);
+                if(estudiante != null) { estudiante = Actualizar(estudiante); }
             }
             catch (Exception)
             {
@@ -178,6 +180,36 @@ namespace PensumProgresoAcademico.BLL
             }
 
             return lista;
+        }
+
+        private static Estudiantes Restablecer(Estudiantes estudiantes)
+        {
+            estudiantes.CreditosPendientes = estudiantes.Pensum.PensumCreditos;
+            estudiantes.MateriasPendientes = estudiantes.Pensum.TotalMaterias;
+            estudiantes.HorasPracticasPendientes = estudiantes.Pensum.PensumHorasPracticas;
+            estudiantes.HorasTeoricasPendientes = estudiantes.Pensum.PensumHorasTeoricas;
+
+            return estudiantes;
+        }
+
+        private static Estudiantes Actualizar(Estudiantes estudiante)
+        {
+            List<Inscripciones> Aux = InscripcionesBLL.GetInscripciones();
+            List<Materias> Aux2;
+            foreach (var item in Aux)
+            {
+                estudiante.CreditosPendientes -= item.CreditosSelccionados;
+                estudiante.MateriasPendientes -= item.CantidadMateria;
+                Aux2 = InscripcionesBLL.GetInscripcionesMaterias(item.InscripcionId);
+                foreach (var item2 in Aux2)
+                {
+                    estudiante.HorasPracticasPendientes -= item2.HorasPracticas;
+                    estudiante.HorasTeoricasPendientes -= item2.HorasTeoricas;
+                }
+                
+            }
+
+            return estudiante;
         }
     }
 }

@@ -80,6 +80,14 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
         private void RemoverButton_Click(object sender, RoutedEventArgs e)
         {
+            if(DetalleDataGrid.SelectedIndex == -1) { return; }
+            var detalle = (InscripcionesDetalle)DetalleDataGrid.SelectedItem;
+            Inscripcion.CantidadMateria--;
+            Inscripcion.CreditosSelccionados -= detalle.Materia.Creditos;
+
+            Inscripcion.InscripcionesDetalles.RemoveAt(DetalleDataGrid.SelectedIndex);
+
+            Cargar();
 
         }
 

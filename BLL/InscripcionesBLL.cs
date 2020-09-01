@@ -51,6 +51,7 @@ namespace PensumProgresoAcademico.BLL
             {
                 foreach (var item in inscripcion.InscripcionesDetalles)
                 {
+                    contexto.Entry(inscripcion.Estudiante).State = EntityState.Modified;
                     contexto.Entry(item.Materia).State = EntityState.Modified;
                 }
                 contexto.Inscripciones.Add(inscripcion);
@@ -191,6 +192,38 @@ namespace PensumProgresoAcademico.BLL
             return lista;
         }
 
-        
+        public static List<Materias> GetInscripcionesMaterias(int id)
+        {
+            Contexto contexto = new Contexto();
+            Inscripciones pensum = new Inscripciones();
+            List<Materias> lista = new List<Materias>();
+
+            try
+            {
+                if (id != 0)
+                {
+                    pensum = contexto.Inscripciones.Where(p => p.InscripcionId == id).Include(d => d.InscripcionesDetalles).
+                    ThenInclude(m => m.Materia).SingleOrDefault();
+                    foreach (var item in pensum.InscripcionesDetalles)
+                    {
+                        lista.Add(item.Materia);
+                    }
+                    
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return lista;
+        }
+
+
     }
 }

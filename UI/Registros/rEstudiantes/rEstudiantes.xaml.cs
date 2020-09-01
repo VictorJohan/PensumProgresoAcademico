@@ -154,12 +154,15 @@ namespace PensumProgresoAcademico.UI.Registros
         {
             if (PensumComboBox.SelectedIndex == -1)
                 return;
-            Pensum pensum = (Pensum)PensumComboBox.SelectedItem;
+            if (!EstudiantesBLL.Existe(int.Parse(MatriculaTextBox.Text)))
+            {
+                Pensum pensum = (Pensum)PensumComboBox.SelectedItem;
 
-            Estudiante.CreditosPendientes = pensum.PensumCreditos;
-            Estudiante.HorasPracticasPendientes = pensum.PensumHorasPracticas;
-            Estudiante.HorasTeoricasPendientes = pensum.PensumHorasTeoricas;
-            Estudiante.MateriasPendientes = pensum.TotalMaterias;
+                Estudiante.CreditosPendientes = pensum.PensumCreditos;
+                Estudiante.HorasPracticasPendientes = pensum.PensumHorasPracticas;
+                Estudiante.HorasTeoricasPendientes = pensum.PensumHorasTeoricas;
+                Estudiante.MateriasPendientes = pensum.TotalMaterias;
+            }
 
 
         }
