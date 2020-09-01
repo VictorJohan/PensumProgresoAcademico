@@ -1,0 +1,40 @@
+﻿<Window x:Class="PensumProgresoAcademico.UI.Consultas.cMaterias.cMaterias"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Consultas.cMaterias"
+        mc:Ignorable="d"
+        Title="Cosultar Estudiante" Height="450" Width="1004" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <StackPanel Orientation="Horizontal">
+                <!--Filtro-->
+                <ComboBox Name="FiltroComboBox" Width="300" FontSize="20" HorizontalAlignment="Left" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Filtro" materialDesign:HintAssist.IsFloating="True"/>
+
+                <!--Criterio-->
+                <TextBox Name="CriterioTextBox" FontSize="20" Width="300" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Criterio" materialDesign:HintAssist.IsFloating="True" Height="43.1" Padding="0,-5,0,0" Margin="149,0,0,0" />
+
+                <!--Boton-->
+                <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="149,23,0,0"/>
+
+            </StackPanel>
+
+            <!--DataGrid-->
+            <DataGrid Name="DetalleDataGrid"  Height="340" AutoGenerateColumns="False" 
+                              AlternatingRowBackground="#FF41CF41"
+                              ItemsSource="{Binding Materias}" Margin="0,10,0,0">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Clave" IsReadOnly="True" Binding="{Binding Clave}"/>
+                    <DataGridTextColumn Header="Descripción" IsReadOnly="True" Binding="{Binding Descripcion}"/>
+                    <DataGridTextColumn Header="Horas Practicas" IsReadOnly="True" Binding="{Binding HorasPracticas}"/>
+                    <DataGridTextColumn Header="Horas Teoricas" IsReadOnly="True" Binding="{Binding HorasTeoricas}"/>
+                    <DataGridTextColumn Header="Creditos" IsReadOnly="True" Binding="{Binding Creditos}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -103,6 +103,7 @@ namespace PensumProgresoAcademico.UI.Consultas.cEstudiantes
             }
 
             DetalleDataGrid.ItemsSource = lista;
+            FiltroComboBox.SelectedIndex = -1;
         }
     }
 }
