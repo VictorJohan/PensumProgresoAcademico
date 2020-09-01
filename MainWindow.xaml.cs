@@ -1,4 +1,5 @@
-﻿using PensumProgresoAcademico.UI.Registros;
+﻿using PensumProgresoAcademico.UI.Consultas.cEstudiantes;
+using PensumProgresoAcademico.UI.Registros;
 using PensumProgresoAcademico.UI.Registros.rInscripciones;
 using PensumProgresoAcademico.UI.Registros.rMaterias;
 using PensumProgresoAcademico.UI.Registros.rPensum;
@@ -31,6 +32,7 @@ namespace PensumProgresoAcademico
             InitializeComponent();
         }
 
+        //Registro----------------------------------------------------------------
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             rEstudiantes rEstudiantes = new rEstudiantes();
@@ -53,6 +55,28 @@ namespace PensumProgresoAcademico
         {
             rPensum rPensum = new rPensum();
             rPensum.Show();
+        }
+
+        //Consultas----------------------------------------------------------------
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            cEstudiantes cEstudiantes = new cEstudiantes();
+            cEstudiantes.Show();
+        }
+
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
