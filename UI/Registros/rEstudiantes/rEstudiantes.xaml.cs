@@ -76,13 +76,13 @@ namespace PensumProgresoAcademico.UI.Registros
         {
             if (EstudiantesBLL.Eliminar(int.Parse(MatriculaTextBox.Text)))
             {
-                MessageBox.Show("Registro eliminado.", "Aviso.",
+                MessageBox.Show("Estudiante eliminado.", "Aviso.",
                    MessageBoxButton.OK, MessageBoxImage.Information);
                 Limpiar();
             }
             else
             {
-                MessageBox.Show("Algo salió mal, no se logró eliminar el registro del estudiante.", "Error.",
+                MessageBox.Show("Algo salió mal, no se logró eliminar el estudiante.", "Error.",
                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }

@@ -2,6 +2,7 @@
 using PensumProgresoAcademico.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -39,12 +40,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Regex.IsMatch(InscripcionIdTextBox.Text, "^[1-9]+${1,5}"))
-            {
-                MessageBox.Show("El Id que ha ingresado no es válido.\nVerifique que haya ingresado un caracter numerico y que este " +
-                    "sea diferente de cero.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
+            if (!Validar()) { return; }
 
             var encontrado = InscripcionesBLL.Buscar(int.Parse(InscripcionIdTextBox.Text));
 
@@ -62,6 +58,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
         private void AgregarButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!ValidarAgregar()) { return; }
 
             var detalle = new InscripcionesDetalle
             {
@@ -72,10 +69,16 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             };
 
             detalle.Materia = (Materias)MateriaComboBox.SelectedItem;
+           
             Inscripcion.InscripcionesDetalles.Add(detalle);
             Inscripcion.CantidadMateria++;
             Inscripcion.CreditosSelccionados += detalle.Materia.Creditos;
+
             Cargar();
+
+            HorasPracticasDetalleTextBox.Clear();
+            HorasTeoricasDetalleTextBox.Clear();
+            CreditosDetalleTextBox.Clear();
         }
 
         private void RemoverButton_Click(object sender, RoutedEventArgs e)
@@ -98,9 +101,11 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Validar()) { return; }
+
             if (InscripcionesBLL.Guardar(Inscripcion))
             {
-                MessageBox.Show("Guardado.", "Exito.",
+                MessageBox.Show("Guardado.", "Aviso.",
                    MessageBoxButton.OK, MessageBoxImage.Information);
                 Limpiar();
             }
@@ -113,6 +118,8 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!Validar()) { return; }
+
             if (!Regex.IsMatch(InscripcionIdTextBox.Text, "^[1-9]+${1,5}"))
             {
                 MessageBox.Show("El Id que ha ingresado no es válido.\nVerifique que haya ingresado un caracter numerico y que este " +
@@ -163,6 +170,44 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
         {
             Inscripcion = new Inscripciones();
             this.DataContext = Inscripcion;
+        }
+
+        public bool Validar()
+        {
+            if(!Regex.IsMatch(InscripcionIdTextBox.Text, "^[1-9]+${1,5}"))
+            {
+                MessageBox.Show("Asegúrese de haber introducido un Id de caracter numérico y diferente de cero.", 
+                    "Id no valido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool ValidarAgregar()
+        {
+            if (MateriaComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecciona una materia para poder agregarla a la inscripcion.",
+                    "Id no valido", MessageBoxButton.OK, MessageBoxImage.Information);
+                return false;
+            }
+
+            if(Inscripcion.InscripcionesDetalles.Any(i => i.Clave == MateriaComboBox.SelectedValue.ToString()))
+            {
+                MessageBox.Show("Esta materia ya se encuntra agregada en la inscripción.", "Aviso.",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                return false;
+            }
+
+            if(InscripcionesBLL.MateriaInscrita(MateriaComboBox.SelectedValue.ToString(), int.Parse(MatriculaComboBox.SelectedValue.ToString())))
+            {
+                MessageBox.Show("Esta materia ya fue inscrita.",
+                   "Aviso.", MessageBoxButton.OK, MessageBoxImage.Information);
+                return false;
+            }
+
+            return true;
         }
     }
 }

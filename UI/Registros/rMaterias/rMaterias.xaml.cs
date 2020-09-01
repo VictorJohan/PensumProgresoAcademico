@@ -39,13 +39,13 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
 
             if (MateriasBLL.Guardar(Materia))
             {
-                MessageBox.Show("Se ha creado la materia de forma exitosa.", "Aviso.",
+                MessageBox.Show("Materia guardada.", "Aviso.",
                    MessageBoxButton.OK, MessageBoxImage.Information);
                 Limpiar();
             }
             else
             {
-                MessageBox.Show("Algo salió mal, no se logró crear la materia.", "Error.",
+                MessageBox.Show("Algo salió mal, no se logró guardar la materia.", "Error.",
                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -54,13 +54,13 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
         {
             if (MateriasBLL.Eliminar(ClaveTextBox.Text))
             {
-                MessageBox.Show("Registro eliminado.", "Aviso.",
+                MessageBox.Show("Materia eliminada.", "Aviso.",
                    MessageBoxButton.OK, MessageBoxImage.Information);
                 Limpiar();
             }
             else
             {
-                MessageBox.Show("Algo salió mal, no se logró eliminar el registro del estudiante.", "Error.",
+                MessageBox.Show("Algo salió mal, no se logró eliminar la materia.", "Error.",
                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -108,7 +108,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             //Valida el campo creditos
             if (!Regex.IsMatch(CreditosTextBox.Text, "^[1-9]{1,2}"))
             {
-                MessageBox.Show("La cantidad de creditos que ingresaste no es valida.", "Campos Creditos.",
+                MessageBox.Show("La cantidad de Créditos que ingresaste no es valida.", "Campos Créditos.",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }

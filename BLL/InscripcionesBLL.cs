@@ -224,6 +224,37 @@ namespace PensumProgresoAcademico.BLL
             return lista;
         }
 
+        public static bool MateriaInscrita(string clave, int matricula)
+        {
+            Contexto contexto = new Contexto();
+            bool ok = false;
+            List<Inscripciones> inscripciones = new List<Inscripciones>();
 
+            try
+            {
+                inscripciones = contexto.Inscripciones.Where(i => i.Matricula == matricula).Include(d => d.InscripcionesDetalles).
+                    ThenInclude(m => m.Materia).ToList();
+                foreach (var aux in inscripciones)
+                {
+                    foreach (var aux2 in aux.InscripcionesDetalles)
+                    {
+                        if(clave == aux2.Clave) { ok = true; }
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return ok;
+           
+        }
     }
 }

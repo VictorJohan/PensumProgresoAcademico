@@ -114,13 +114,13 @@ namespace PensumProgresoAcademico.UI.Registros.rPensum
 
             if (PensumBLL.Guardar(Pensum))
             {
-                MessageBox.Show("Se ha creado un nuevo pensum.", "Exito.",
+                MessageBox.Show("Pensum guardado.", "Aviso.",
                    MessageBoxButton.OK, MessageBoxImage.Information);
                 Limpiar();
             }
             else
             {
-                MessageBox.Show("Algo salió mal, no se logró crear el pensum.", "Error.",
+                MessageBox.Show("Algo salió mal, no se logró guardar el pensum.", "Error.",
                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
