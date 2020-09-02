@@ -25,12 +25,13 @@
                     <MediaElement Name="Titulo1MediaElement" Height="335" Stretch="Uniform" HorizontalAlignment="Left" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\My.mp4"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Vertical" Height="335" Width="237">
-                    <MediaElement Name="Titulo2MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\Progress.mp4"/>
-                </StackPanel>
 
                 <StackPanel Orientation="Vertical" Height="335" Width="237">
                     <MediaElement Name="Titulo3MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\Academic.mp4"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical" Height="335" Width="237">
+                    <MediaElement Name="Titulo2MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\Progress.mp4"/>
                 </StackPanel>
 
             </StackPanel>
