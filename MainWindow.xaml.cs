@@ -39,14 +39,14 @@ namespace PensumProgresoAcademico
             menuRegister.Add(new SubItem("Materia"));
             menuRegister.Add(new SubItem("Pensum"));
             menuRegister.Add(new SubItem("Estudiante"));
-            menuRegister.Add(new SubItem("Inscrinción"));
+            menuRegister.Add(new SubItem("Inscripción"));
             var item = new ItemMenu("Registros", menuRegister, PackIconKind.Register);
 
             var menuConsulta = new List<SubItem>();
             menuConsulta.Add(new SubItem("Materia"));
             menuConsulta.Add(new SubItem("Pensum"));
             menuConsulta.Add(new SubItem("Estudiante"));
-            menuConsulta.Add(new SubItem("Inscrinción"));
+            menuConsulta.Add(new SubItem("Inscripción"));
             var item2 = new ItemMenu("Consultas", menuConsulta, PackIconKind.Search);
 
            

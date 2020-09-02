@@ -6,6 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Consultas.cInscripciones"
         mc:Ignorable="d"
+        ContentRendered="Window_ContentRendered"
+        Initialized="Window_Initialized"
         Title="Cosulta Inscripciones" Height="450" Width="860" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">

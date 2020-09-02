@@ -140,5 +140,17 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
 
             return true;
         }
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            this.Topmost = false;
+            this.Focus();
+        }
+
+        private void Window_Initialized(object sender, EventArgs e)
+        {
+            this.Topmost = true;
+            this.Focus();
+        }
     }
 }

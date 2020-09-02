@@ -6,6 +6,8 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Registros.rInscripciones"
         mc:Ignorable="d"
+        ContentRendered="Window_ContentRendered"
+        Initialized="Window_Initialized"
         Title="Registrar Inscripciones" Height="690" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">

@@ -6,6 +6,8 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Consultas.cPensum"
         mc:Ignorable="d"
+        ContentRendered="Window_ContentRendered"
+        Initialized="Window_Initialized"
         Title="Cosulta Pensum" Height="450" Width="1004" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
