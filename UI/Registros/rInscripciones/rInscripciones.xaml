@@ -8,30 +8,30 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Registrar Inscripciones" Height="690" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registrar Inscripciones" Height="690" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--TextBox Inscripcion Id y Boton-->
             <StackPanel Orientation="Horizontal">
                 <!--TextBox-->
-                <TextBox Name="InscripcionIdTextBox" Width="1085" FontSize="20" Text="{Binding InscripcionId}" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Inscripcion Id" materialDesign:HintAssist.IsFloating="True"/>
+                <TextBox Name="InscripcionIdTextBox" Width="1085" FontSize="20" Text="{Binding InscripcionId}" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Inscripcion Id" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
                 <!--Boton-->
                 <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
             </StackPanel>
             
             <!--Matricula/Estudiante-->
-            <ComboBox Name="MatriculaComboBox" FontSize="20" SelectedValue="{Binding Matricula}" Margin="5,0" materialDesign:HintAssist.Hint="Estudiante" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MatriculaComboBox_SelectionChanged"/>
+            <ComboBox Name="MatriculaComboBox" FontSize="20" SelectedValue="{Binding Matricula}" Margin="5,0" materialDesign:HintAssist.Hint="Estudiante" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MatriculaComboBox_SelectionChanged" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="White"/>
 
             <!--Fecha-->
-            <DatePicker Name="FechaDatePicker" FontSize="20" SelectedDate="{Binding Fecha}"  Margin="5,0,5,0" materialDesign:HintAssist.Hint="Fecha" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0"/>
+            <DatePicker Name="FechaDatePicker" FontSize="20" SelectedDate="{Binding Fecha}"  Margin="5,0,5,0" materialDesign:HintAssist.Hint="Fecha" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="White"/>
             
             <!--Creditos-->
-            <TextBox Name="CreditosSelccionadosTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CreditosSelccionados}" Margin="5,0" materialDesign:HintAssist.Hint="Creditos Selccionados" materialDesign:HintAssist.IsFloating="True"/>
+            <TextBox Name="CreditosSelccionadosTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CreditosSelccionados}" Margin="5,0" materialDesign:HintAssist.Hint="Creditos Selccionados" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
 
             <!--Materias-->
-            <TextBox Name="CantidadMateriaTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CantidadMateria}"  Margin="5,0" materialDesign:HintAssist.Hint="Materias Selccionados" materialDesign:HintAssist.IsFloating="True"/>
+            <TextBox Name="CantidadMateriaTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CantidadMateria}"  Margin="5,0" materialDesign:HintAssist.Hint="Materias Selccionados" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
 
-            <GroupBox Margin="5,10">
+            <GroupBox Margin="5,10" materialDesign:ColorZoneAssist.Background="#FFF79D00" materialDesign:ColorZoneAssist.Mode="Custom">
                 <GroupBox.Header>
                     <Label Content="Inscripción Detalle" FontSize="15" Foreground="White"/>
                 </GroupBox.Header>
@@ -41,15 +41,15 @@
                     <!--Panel de TextBox-->
                     <StackPanel Orientation="Horizontal">
                         <!--Materia-->
-                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged"/>
+                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="White"/>
                         <!--Horas Practicas-->
-                        <TextBox Name="HorasPracticasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0"/>
+                        <TextBox Name="HorasPracticasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
 
                         <!--Horas Teoricas-->
-                        <TextBox Name="HorasTeoricasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Teoricas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0"/>
+                        <TextBox Name="HorasTeoricasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Teoricas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
 
                         <!--Horas Teoricas-->
-                        <TextBox Name="CreditosDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Creditos" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0"/>
+                        <TextBox Name="CreditosDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Creditos" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
 
                         <!--Boton agregar-->
                         <Button Name="AgregarButton" Height="20" Content="Agregar" Background="Snow"  FontSize="11" Click="AgregarButton_Click" Padding="16,1,16,4" Margin="10,23,0,0"/>
@@ -57,7 +57,7 @@
                     </StackPanel>
 
                     <!--DataGrid-->
-                    <DataGrid Name="DetalleDataGrid"  Height="160" AutoGenerateColumns="False" AlternatingRowBackground="#FF41CF41"
+                    <DataGrid Name="DetalleDataGrid"  Height="160" AutoGenerateColumns="False" AlternatingRowBackground="#FFFDE255"
                               ItemsSource="{Binding InscripcionesDetalles}" Margin="0,5,0,0" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Clave"  IsReadOnly="True" Binding="{Binding Clave}"/>
