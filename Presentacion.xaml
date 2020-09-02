@@ -1,0 +1,42 @@
+﻿<Window x:Class="PensumProgresoAcademico.Presentacion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:PensumProgresoAcademico"
+        mc:Ignorable="d"
+        Title="Presentacion" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF0E8FAC"/>
+            <GradientStop Color="#FFE1F0F3" Offset="0.478"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    
+    <Grid>
+
+        <StackPanel Orientation="Vertical">
+
+            <Label Content="My Academic Progress" FontSize="86" HorizontalAlignment="Center" Background="{x:Null}" FontFamily="Sitka Display" Margin="0,72,0,0">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.891"/>
+                        <GradientStop Color="#FF2FA8C3"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+
+            <StackPanel Orientation="Horizontal" Height="83"  HorizontalAlignment="Center" Background="White" Margin="0,132,0,0" Width="801">
+                <Image Source="/Resources/GraySkayLogo.png" Height="89" Width="773" />
+            </StackPanel>
+
+            <Label Content="V1.0 by © Gray Skay 2020" FontWeight="Bold" Background="LightBlue"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
