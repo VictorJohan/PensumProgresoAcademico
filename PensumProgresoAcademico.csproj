@@ -10,8 +10,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Academic.mp4" />
 	  <None Remove="Resources\GraySkay.png" />
+	  <None Remove="Resources\GrayskayAnimed.mp4" />
+	  <None Remove="Resources\GrayskayAnimedLigth.mp4" />
 	  <None Remove="Resources\GrayskayLogo.png" />
+	  <None Remove="Resources\My.mp4" />
+	  <None Remove="Resources\Progress.mp4" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -29,7 +34,12 @@
 
 	<ItemGroup>
 	  <Resource Include="Resources\GraySkay.png" />
+	  <Resource Include="Resources\GrayskayAnimed.mp4" />
+	  <Resource Include="Resources\GrayskayAnimedLigth.mp4" />
 	  <Resource Include="Resources\GrayskayLogo.png" />
+	  <Resource Include="Resources\Academic.mp4" />
+	  <Resource Include="Resources\Progress.mp4" />
+	  <Resource Include="Resources\My.mp4" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -22,13 +22,14 @@ namespace PensumProgresoAcademico
         public Presentacion()
         {
             InitializeComponent();
-
-            //Iniciar();
+           
+            Iniciar();
         
         }
 
         async public void Iniciar()
         {
+            
             await Task.Delay(5000);
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();

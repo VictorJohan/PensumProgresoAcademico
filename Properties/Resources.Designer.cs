@@ -63,6 +63,16 @@ namespace PensumProgresoAcademico.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] GrayskayAnimedLigth {
+            get {
+                object obj = ResourceManager.GetObject("GrayskayAnimedLigth", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] GrayskayLogo {
             get {
                 object obj = ResourceManager.GetObject("GrayskayLogo", resourceCulture);
