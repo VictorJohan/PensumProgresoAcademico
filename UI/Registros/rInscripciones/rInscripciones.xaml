@@ -21,7 +21,7 @@
             <ComboBox Name="MatriculaComboBox" FontSize="20" SelectedValue="{Binding Matricula}" Margin="5,0" materialDesign:HintAssist.Hint="Estudiante" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MatriculaComboBox_SelectionChanged"/>
 
             <!--Fecha-->
-            <DatePicker Name="FechaDatePicker" FontSize="20" SelectedDate="{Binding Fecha}"  Margin="5,0,5,0" materialDesign:HintAssist.Hint="Fecha Ingreso" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0"/>
+            <DatePicker Name="FechaDatePicker" FontSize="20" SelectedDate="{Binding Fecha}"  Margin="5,0,5,0" materialDesign:HintAssist.Hint="Fecha" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0"/>
             
             <!--Creditos-->
             <TextBox Name="CreditosSelccionadosTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CreditosSelccionados}" Margin="5,0" materialDesign:HintAssist.Hint="Creditos Selccionados" materialDesign:HintAssist.IsFloating="True"/>

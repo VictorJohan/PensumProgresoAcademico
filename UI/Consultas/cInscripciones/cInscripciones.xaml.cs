@@ -13,15 +13,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PensumProgresoAcademico.UI.Consultas.cMaterias
+namespace PensumProgresoAcademico.UI.Consultas.cInscripciones
 {
     /// <summary>
-    /// Interaction logic for cMaterias.xaml
+    /// Interaction logic for cInscripciones.xaml
     /// </summary>
-    public partial class cMaterias : Window
+    public partial class cInscripciones : Window
     {
-        string[] filtro = { "Clave", "Descripción", "Horas Practicas", "Horas Teoricas", "Créditos" };
-        public cMaterias()
+        string[] filtro = { "Inscripcion Id", "Estudiante Matricula", "Créditos Selccionados", "Cantidad Materia", "Fecha" };
+        public cInscripciones()
         {
             InitializeComponent();
             FiltroComboBox.ItemsSource = filtro;
@@ -29,58 +29,61 @@ namespace PensumProgresoAcademico.UI.Consultas.cMaterias
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            List<Materias> lista = new List<Materias>();
+            List<Inscripciones> lista = new List<Inscripciones>();
             if (FiltroComboBox.SelectedIndex != -1)
             {
                 switch (FiltroComboBox.SelectedItem.ToString())
                 {
-                    case "Clave":
-                       
-                        lista = MateriasBLL.GetMaterias(m => m.Clave == CriterioTextBox.Text);
+                    case "Inscripcion Id":
+                        if (!Regex.IsMatch(CriterioTextBox.Text, "^[0-9]+$"))
+                        {
+                            MessageBox.Show("Ingrese un digito válido.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            return;
+                        }
+                        lista = InscripcionesBLL.GetInscripciones(i => i.InscripcionId == int.Parse(CriterioTextBox.Text));
                         break;
-                    case "Descripción":
-
-                        lista = MateriasBLL.GetMaterias(m => m.Descripcion == CriterioTextBox.Text);
+                    case "Estudiante Matricula":
+                        if (!Regex.IsMatch(CriterioTextBox.Text, "^[0-9]+$"))
+                        {
+                            MessageBox.Show("Ingrese una matricula válida.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            return;
+                        }
+                        lista = InscripcionesBLL.GetInscripciones(i => i.Matricula == int.Parse(CriterioTextBox.Text));
                         break;
-                    case "Horas Practicas":
+                    case "Créditos Selccionados":
                         if (!Regex.IsMatch(CriterioTextBox.Text, "^[0-9]+$"))
                         {
                             MessageBox.Show("Ingrese un digito válido.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
                             return;
                         }
 
-                        lista = MateriasBLL.GetMaterias(m => m.HorasPracticas == byte.Parse(CriterioTextBox.Text));
+                        lista = InscripcionesBLL.GetInscripciones(i => i.CreditosSelccionados == int.Parse(CriterioTextBox.Text));
                         break;
 
-                    case "Horas Teoricas":
+                    case "Cantidad Materia":
                         if (!Regex.IsMatch(CriterioTextBox.Text, "^[0-9]+$"))
                         {
-                            MessageBox.Show("Ingrese un digito válido.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("Ingrese una digito válido.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
                             return;
                         }
 
-                        lista = MateriasBLL.GetMaterias(m => m.HorasTeoricas == byte.Parse(CriterioTextBox.Text));
+                        lista = InscripcionesBLL.GetInscripciones(i => i.CantidadMateria == int.Parse(CriterioTextBox.Text));
                         break;
 
-                    case "Créditos":
-                        if (!Regex.IsMatch(CriterioTextBox.Text, "^[0-9]+$"))
-                        {
-                            MessageBox.Show("Ingrese un digito válido.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
-                            return;
-                        }
+                    case "Fecha":
 
-                        lista = MateriasBLL.GetMaterias(m => m.Creditos == byte.Parse(CriterioTextBox.Text));
+                        lista = InscripcionesBLL.GetInscripciones(i => i.Fecha == FechaDatePicker.SelectedDate.Value);
                         break;
                 }
             }
             else
             {
-                lista = MateriasBLL.GetMaterias();
+                lista = InscripcionesBLL.GetInscripciones();
             }
 
             DetalleDataGrid.ItemsSource = lista;
             FiltroComboBox.SelectedIndex = -1;
+            FechaDatePicker.SelectedDate = null;
         }
-             
     }
 }

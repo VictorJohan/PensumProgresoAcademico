@@ -1,4 +1,5 @@
 ﻿using PensumProgresoAcademico.UI.Consultas.cEstudiantes;
+using PensumProgresoAcademico.UI.Consultas.cInscripciones;
 using PensumProgresoAcademico.UI.Consultas.cMaterias;
 using PensumProgresoAcademico.UI.Registros;
 using PensumProgresoAcademico.UI.Registros.rInscripciones;
@@ -78,7 +79,8 @@ namespace PensumProgresoAcademico
 
         private void MenuItem_Click_7(object sender, RoutedEventArgs e)
         {
-
+            cInscripciones cInscripciones = new cInscripciones();
+            cInscripciones.Show();
         }
     }
 }
