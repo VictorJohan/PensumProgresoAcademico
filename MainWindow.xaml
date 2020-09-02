@@ -6,34 +6,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PensumProgresoAcademico"
         mc:Ignorable="d"
-        Title="Progreso Académico" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Progreso Académico" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
-            <Grid>
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right" Margin="10"/>
-            </Grid>
-        </materialDesign:ColorZone>
-            <Grid HorizontalAlignment="Stretch" Grid.Row="1" Background="{StaticResource PrimaryHueMidBrush}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="326"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Background="White">
-                <Image Source="/Resources/GraySkayLogo.png"/>
-            </Grid>
-            <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
-                <StackPanel Name="MenuStackPanel" Margin="10"/>
-            </ScrollViewer>
-            </Grid>
+        <Menu  VerticalAlignment="Top">
+            <MenuItem Header="Registros" Foreground="Black" FontSize="11" Padding="5,0,5,0" Height="20">
+                <MenuItem Header="Materia" Click="MenuItem_Click_2"/>
+                <MenuItem Header="Pensum" Click="MenuItem_Click_3"/>
+                <MenuItem Header="Estudiantes" Click="MenuItem_Click"/>
+                <MenuItem Header="Inscripción" Click="MenuItem_Click_1"/>
+            </MenuItem>
+            <MenuItem Header="Consultas" Foreground="Black" FontSize="11" Padding="5,0,5,0" Height="20">
+                <MenuItem Header="Materia" Click="MenuItem_Click_4"/>
+                <MenuItem Header="Pensum" Click="MenuItem_Click_5"/>
+                <MenuItem Header="Estudiantes" Click="MenuItem_Click_6"/>
+                <MenuItem Header="Inscripción" Click="MenuItem_Click_7"/>
+            </MenuItem>
+        </Menu>
         
     </Grid>
 </Window>

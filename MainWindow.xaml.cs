@@ -34,6 +34,50 @@ namespace PensumProgresoAcademico
             InitializeComponent();
         }
 
-        
+        //Registro----------------------------------------------------------------
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rEstudiantes rEstudiantes = new rEstudiantes();
+            rEstudiantes.Show();
+        }
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            rInscripciones rInscripciones = new rInscripciones();
+            rInscripciones.Show();
+        }
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            rMaterias rMaterias = new rMaterias();
+            rMaterias.Show();
+        }
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            rPensum rPensum = new rPensum();
+            rPensum.Show();
+        }
+        //Consultas----------------------------------------------------------------
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            cMaterias cMaterias = new cMaterias();
+            cMaterias.Show();
+        }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+
+            cPensum cPensum = new cPensum();
+            cPensum.Show();
+        }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            cEstudiantes cEstudiantes = new cEstudiantes();
+            cEstudiantes.Show();
+        }
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+            cInscripciones cInscripciones = new cInscripciones();
+            cInscripciones.Show();
+        }
     }
 }
