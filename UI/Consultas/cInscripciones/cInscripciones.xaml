@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Cosulta Inscripciones" Height="450" Width="860" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717">
+        Title="Cosulta Inscripciones" Height="450" Width="860" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717" Icon="/Resources/search.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <StackPanel Orientation="Horizontal">

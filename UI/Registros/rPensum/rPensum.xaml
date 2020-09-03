@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Registro Pensum" Height="700" Width="1360" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717">
+        Title="Registro Pensum" Height="700" Width="1360" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717"  Icon="/Resources/pensum.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--PensumId-->

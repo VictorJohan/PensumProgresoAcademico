@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Registro Estudiantes" Height="450" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717">
+        Title="Registro Estudiantes" Height="450" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717"  Icon="/Resources/birrete.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
            

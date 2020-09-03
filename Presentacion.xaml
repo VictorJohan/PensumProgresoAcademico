@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico"
         mc:Ignorable="d"
-        Title="My Academic Progress" Height="455" Width="722" WindowStartupLocation="CenterScreen">
+        Title="My Academic Progress" Height="455" Width="722" WindowStartupLocation="CenterScreen" Icon="/Resources/murcielago.png">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFDA951A" Offset="0.174"/>
@@ -18,21 +18,16 @@
 
         <StackPanel Orientation="Vertical">
 
-
             <Image Source="/Resources/portada.jpg" />
-
-
-
 
             <StackPanel Orientation="Horizontal" Height="83"   Background="Black" Margin="0,1,0,0" >
                 <MediaElement Name="LogoMediaElement" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\GrayskayAnimed.mp4"/>
                 <MediaElement Name="TituloMediaElement" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\Title.mp4" Margin="80,0,0,0"/>
             </StackPanel>
 
-            <Label Content="V1.0(Beta) by © Gray Skay 2020" FontStyle="Italic" Foreground="White" Background="#FFDA951A"/>
+            <Label Content="V1.0(Beta) by © Gray Skay 2020" FontStyle="Italic" Foreground="White"  Background="#FFDA951A"/>
 
         </StackPanel>
-
 
     </Grid>
 </Window>

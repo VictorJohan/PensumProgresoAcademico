@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Registrar Inscripciones" Height="690" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717">
+        Title="Registrar Inscripciones" Height="690" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717"  Icon="/Resources/inscripcion.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--TextBox Inscripcion Id y Boton-->

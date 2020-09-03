@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PensumProgresoAcademico"
         mc:Ignorable="d"
-        Title="Progreso Académico" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Progreso Académico" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized"  Icon="/Resources/murcielago.png">
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
