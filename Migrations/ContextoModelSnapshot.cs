@@ -131,7 +131,7 @@ namespace PensumProgresoAcademico.Migrations
                         },
                         new
                         {
-                            Clave = "CS -115",
+                            Clave = "CS-115",
                             Creditos = (byte)2,
                             Descripcion = "INTRODUCCION AL ESTUDIO DE LAS CIENCIAS SOCIALES",
                             HorasPracticas = (byte)0,
@@ -179,7 +179,7 @@ namespace PensumProgresoAcademico.Migrations
                         },
                         new
                         {
-                            Clave = "CS -126",
+                            Clave = "CS-126",
                             Creditos = (byte)3,
                             Descripcion = "HISTORIA SOCIAL DOMINICANA",
                             HorasPracticas = (byte)0,
@@ -227,7 +227,7 @@ namespace PensumProgresoAcademico.Migrations
                         },
                         new
                         {
-                            Clave = "ISC -201",
+                            Clave = "ISC-201",
                             Creditos = (byte)2,
                             Descripcion = "INTRODUCCION A LA INGENIERIA DE SISTEMAS",
                             HorasPracticas = (byte)0,
@@ -339,14 +339,6 @@ namespace PensumProgresoAcademico.Migrations
                         },
                         new
                         {
-                            Clave = "clave",
-                            Creditos = (byte)4,
-                            Descripcion = "aaaaaaaa",
-                            HorasPracticas = (byte)0,
-                            HorasTeoricas = (byte)4
-                        },
-                        new
-                        {
                             Clave = "ISC-401",
                             Creditos = (byte)3,
                             Descripcion = "PROGRAMACION I",
@@ -403,7 +395,7 @@ namespace PensumProgresoAcademico.Migrations
                         },
                         new
                         {
-                            Clave = "EC -131",
+                            Clave = "EC-131",
                             Creditos = (byte)3,
                             Descripcion = "INTRODUCCION A LA ECONOMIA",
                             HorasPracticas = (byte)0,
@@ -507,7 +499,7 @@ namespace PensumProgresoAcademico.Migrations
                         },
                         new
                         {
-                            Clave = "CS -137",
+                            Clave = "CS-137",
                             Creditos = (byte)3,
                             Descripcion = "METODOLOGIA DE INVESTIGACION CIENTIFICA I",
                             HorasPracticas = (byte)0,
@@ -595,7 +587,7 @@ namespace PensumProgresoAcademico.Migrations
                         },
                         new
                         {
-                            Clave = "IC -433",
+                            Clave = "IC-433",
                             Creditos = (byte)3,
                             Descripcion = "INGENIERIA ECONOMICA",
                             HorasPracticas = (byte)2,
@@ -819,7 +811,7 @@ namespace PensumProgresoAcademico.Migrations
                         },
                         new
                         {
-                            Clave = "CS -232",
+                            Clave = "CS-232",
                             Creditos = (byte)2,
                             Descripcion = "MET. INVESTIGACION CIENTIF. II",
                             HorasPracticas = (byte)0,

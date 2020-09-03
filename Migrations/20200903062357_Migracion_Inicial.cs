@@ -175,7 +175,7 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "IC -433", (byte)3, "INGENIERIA ECONOMICA", (byte)2, (byte)2 });
+                values: new object[] { "IC-433", (byte)3, "INGENIERIA ECONOMICA", (byte)2, (byte)2 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -230,7 +230,7 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "CS -137", (byte)3, "METODOLOGIA DE INVESTIGACION CIENTIFICA I", (byte)0, (byte)3 });
+                values: new object[] { "CS-137", (byte)3, "METODOLOGIA DE INVESTIGACION CIENTIFICA I", (byte)0, (byte)3 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -260,7 +260,7 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "CS -232", (byte)2, "MET. INVESTIGACION CIENTIF. II", (byte)0, (byte)2 });
+                values: new object[] { "CS-232", (byte)2, "MET. INVESTIGACION CIENTIF. II", (byte)0, (byte)2 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -360,22 +360,17 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
+                values: new object[] { "ISC-011", (byte)0, "PASANTIA II", (byte)0, (byte)0 });
+
+            migrationBuilder.InsertData(
+                table: "Materias",
+                columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
                 values: new object[] { "HUM-301", (byte)2, "DOCTRINA SOCIAL DE LA IGLESIA", (byte)0, (byte)2 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "ISC-607", (byte)1, "LAB. PROGRAMACION III", (byte)2, (byte)0 });
-
-            migrationBuilder.InsertData(
-                table: "Materias",
-                columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
                 values: new object[] { "ISC-606", (byte)3, "PROGRAMACION III", (byte)0, (byte)3 });
-
-            migrationBuilder.InsertData(
-                table: "Materias",
-                columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "ING-315", (byte)4, "INGLES INTERMEDIO I", (byte)2, (byte)3 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -405,7 +400,7 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "ISC -201", (byte)2, "INTRODUCCION A LA INGENIERIA DE SISTEMAS", (byte)0, (byte)2 });
+                values: new object[] { "ISC-201", (byte)2, "INTRODUCCION A LA INGENIERIA DE SISTEMAS", (byte)0, (byte)2 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -420,12 +415,12 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "FIS-127", (byte)4, "FISICA BASICA", (byte)2, (byte)3 });
+                values: new object[] { "ING-315", (byte)4, "INGLES INTERMEDIO I", (byte)2, (byte)3 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "MAT-125", (byte)4, "PRECALCULO", (byte)2, (byte)3 });
+                values: new object[] { "FIS-127", (byte)4, "FISICA BASICA", (byte)2, (byte)3 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -435,7 +430,7 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "CS -126", (byte)3, "HISTORIA SOCIAL DOMINICANA", (byte)0, (byte)3 });
+                values: new object[] { "CS-126", (byte)3, "HISTORIA SOCIAL DOMINICANA", (byte)0, (byte)3 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -465,7 +460,12 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "CS -115", (byte)2, "INTRODUCCION AL ESTUDIO DE LAS CIENCIAS SOCIALES", (byte)0, (byte)2 });
+                values: new object[] { "CS-115", (byte)2, "INTRODUCCION AL ESTUDIO DE LAS CIENCIAS SOCIALES", (byte)0, (byte)2 });
+
+            migrationBuilder.InsertData(
+                table: "Materias",
+                columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
+                values: new object[] { "MAT-125", (byte)4, "PRECALCULO", (byte)2, (byte)3 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -475,17 +475,12 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "ISC-011", (byte)0, "PASANTIA II", (byte)0, (byte)0 });
-
-            migrationBuilder.InsertData(
-                table: "Materias",
-                columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
                 values: new object[] { "ISC-302", (byte)1, "LABORATORIO TECNICA DE PROGRAMACION", (byte)2, (byte)0 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "FIS-218", (byte)5, "FISICA II", (byte)2, (byte)4 });
+                values: new object[] { "ORI-127", (byte)1, "ACTIVIDAD CO-CURRICULAR", (byte)2, (byte)0 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -525,7 +520,7 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "EC -131", (byte)3, "INTRODUCCION A LA ECONOMIA", (byte)0, (byte)3 });
+                values: new object[] { "EC-131", (byte)3, "INTRODUCCION A LA ECONOMIA", (byte)0, (byte)3 });
 
             migrationBuilder.InsertData(
                 table: "Materias",
@@ -565,11 +560,6 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "clave", (byte)4, "aaaaaaaa", (byte)0, (byte)4 });
-
-            migrationBuilder.InsertData(
-                table: "Materias",
-                columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
                 values: new object[] { "ING-424", (byte)4, "INGLES PARA SISTEMAS", (byte)2, (byte)3 });
 
             migrationBuilder.InsertData(
@@ -585,7 +575,12 @@ namespace PensumProgresoAcademico.Migrations
             migrationBuilder.InsertData(
                 table: "Materias",
                 columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
-                values: new object[] { "ORI-127", (byte)1, "ACTIVIDAD CO-CURRICULAR", (byte)2, (byte)0 });
+                values: new object[] { "FIS-218", (byte)5, "FISICA II", (byte)2, (byte)4 });
+
+            migrationBuilder.InsertData(
+                table: "Materias",
+                columns: new[] { "Clave", "Creditos", "Descripcion", "HorasPracticas", "HorasTeoricas" },
+                values: new object[] { "ISC-607", (byte)1, "LAB. PROGRAMACION III", (byte)2, (byte)0 });
 
             migrationBuilder.InsertData(
                 table: "Materias",

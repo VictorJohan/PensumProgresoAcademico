@@ -33,7 +33,7 @@ namespace PensumProgresoAcademico.DAL
 
             modelBuilder.Entity<Materias>().HasData(new Materias
             {
-                Clave = "CS -115",
+                Clave = "CS-115",
                 Descripcion = "INTRODUCCION AL ESTUDIO DE LAS CIENCIAS SOCIALES",
                 HorasPracticas = 0,
                 HorasTeoricas = 2,
@@ -87,7 +87,7 @@ namespace PensumProgresoAcademico.DAL
 
             modelBuilder.Entity<Materias>().HasData(new Materias
             {
-                Clave = "CS -126",
+                Clave = "CS-126",
                 Descripcion = "HISTORIA SOCIAL DOMINICANA",
                 HorasPracticas = 0,
                 HorasTeoricas = 3,
@@ -141,7 +141,7 @@ namespace PensumProgresoAcademico.DAL
 
             modelBuilder.Entity<Materias>().HasData(new Materias
             {
-                Clave = "ISC -201",
+                Clave = "ISC-201",
                 Descripcion = "INTRODUCCION A LA INGENIERIA DE SISTEMAS",
                 HorasPracticas = 0,
                 HorasTeoricas = 2,
@@ -267,15 +267,6 @@ namespace PensumProgresoAcademico.DAL
 
             modelBuilder.Entity<Materias>().HasData(new Materias
             {
-                Clave = "clave",
-                Descripcion = "aaaaaaaa",
-                HorasPracticas = 0,
-                HorasTeoricas = 4,
-                Creditos = 4
-            });
-
-            modelBuilder.Entity<Materias>().HasData(new Materias
-            {
                 Clave = "ISC-401",
                 Descripcion = "PROGRAMACION I",
                 HorasPracticas = 0,
@@ -339,7 +330,7 @@ namespace PensumProgresoAcademico.DAL
 
             modelBuilder.Entity<Materias>().HasData(new Materias
             {
-                Clave = "EC -131",
+                Clave = "EC-131",
                 Descripcion = "INTRODUCCION A LA ECONOMIA",
                 HorasPracticas = 0,
                 HorasTeoricas = 3,
@@ -456,7 +447,7 @@ namespace PensumProgresoAcademico.DAL
 
             modelBuilder.Entity<Materias>().HasData(new Materias
             {
-                Clave = "CS -137",
+                Clave = "CS-137",
                 Descripcion = "METODOLOGIA DE INVESTIGACION CIENTIFICA I",
                 HorasPracticas = 0,
                 HorasTeoricas = 3,
@@ -555,7 +546,7 @@ namespace PensumProgresoAcademico.DAL
 
             modelBuilder.Entity<Materias>().HasData(new Materias
             {
-                Clave = "IC -433",
+                Clave = "IC-433",
                 Descripcion = "INGENIERIA ECONOMICA",
                 HorasPracticas = 2,
                 HorasTeoricas = 2,
@@ -807,7 +798,7 @@ namespace PensumProgresoAcademico.DAL
 
             modelBuilder.Entity<Materias>().HasData(new Materias
             {
-                Clave = "CS -232",
+                Clave = "CS-232",
                 Descripcion = "MET. INVESTIGACION CIENTIF. II",
                 HorasPracticas = 0,
                 HorasTeoricas = 2,
