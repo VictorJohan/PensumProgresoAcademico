@@ -6,41 +6,30 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico"
         mc:Ignorable="d"
-        Title="Presentacion" Height="455" Width="722" WindowStartupLocation="CenterScreen" WindowStyle="None">
-
-
+        Title="My Academic Progress" Height="455" Width="722" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF0E8FAC"/>
-            <GradientStop Color="#FFE1F0F3" Offset="0.478"/>
+            <GradientStop Color="#FFDA951A" Offset="0.174"/>
+            <GradientStop Color="#FF111111" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-    
+
     <Grid>
 
         <StackPanel Orientation="Vertical">
 
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Vertical" Height="335" Width="237">
-                    <MediaElement Name="Titulo1MediaElement" Height="335" Stretch="Uniform" HorizontalAlignment="Left" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\My.mp4"/>
-                </StackPanel>
+
+            <Image Source="/Resources/portada.jpg" />
 
 
-                <StackPanel Orientation="Vertical" Height="335" Width="237">
-                    <MediaElement Name="Titulo3MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\Academic.mp4"/>
-                </StackPanel>
-                
-                <StackPanel Orientation="Vertical" Height="335" Width="237">
-                    <MediaElement Name="Titulo2MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\Progress.mp4"/>
-                </StackPanel>
 
-            </StackPanel>
-            
-            <StackPanel Orientation="Horizontal" Height="83"   Background="White" Margin="0,1,0,0" >
-                <MediaElement Name="LogoMediaElement" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\GrayskayAnimedLigth.mp4"/>
+
+            <StackPanel Orientation="Horizontal" Height="83"   Background="Black" Margin="0,1,0,0" >
+                <MediaElement Name="LogoMediaElement" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\GrayskayAnimed.mp4"/>
+                <MediaElement Name="TituloMediaElement" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\Title.mp4" Margin="80,0,0,0"/>
             </StackPanel>
 
-            <Label Content="V1.0 by © Gray Skay 2020" FontStyle="Italic" Background="LightBlue"/>
+            <Label Content="V1.0(Beta) by © Gray Skay 2020" FontStyle="Italic" Foreground="White" Background="#FFDA951A"/>
 
         </StackPanel>
 

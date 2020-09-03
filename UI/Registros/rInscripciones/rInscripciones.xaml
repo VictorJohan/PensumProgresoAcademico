@@ -20,10 +20,10 @@
             </StackPanel>
             
             <!--Matricula/Estudiante-->
-            <ComboBox Name="MatriculaComboBox" FontSize="20" SelectedValue="{Binding Matricula}" Margin="5,0" materialDesign:HintAssist.Hint="Estudiante" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MatriculaComboBox_SelectionChanged" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="White"/>
+            <ComboBox Name="MatriculaComboBox" FontSize="20" SelectedValue="{Binding Matricula}" Margin="5,0" materialDesign:HintAssist.Hint="Estudiante" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MatriculaComboBox_SelectionChanged" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="Gray"/>
 
             <!--Fecha-->
-            <DatePicker Name="FechaDatePicker" FontSize="20" SelectedDate="{Binding Fecha}"  Margin="5,0,5,0" materialDesign:HintAssist.Hint="Fecha" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="White"/>
+            <DatePicker Name="FechaDatePicker" FontSize="20" SelectedDate="{Binding Fecha}"  Margin="5,0,5,0" materialDesign:HintAssist.Hint="Fecha" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="Gray"/>
             
             <!--Creditos-->
             <TextBox Name="CreditosSelccionadosTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CreditosSelccionados}" Margin="5,0" materialDesign:HintAssist.Hint="Creditos Selccionados" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
@@ -41,7 +41,7 @@
                     <!--Panel de TextBox-->
                     <StackPanel Orientation="Horizontal">
                         <!--Materia-->
-                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="White"/>
+                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="Gray"/>
                         <!--Horas Practicas-->
                         <TextBox Name="HorasPracticasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
 

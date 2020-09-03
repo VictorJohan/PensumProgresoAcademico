@@ -24,11 +24,10 @@
             <TextBox Name="NombresTextBox" Text="{Binding Nombres}" FontSize="20" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Nombres" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
 
             <!--Pensum-->
+            <ComboBox Name="PensumComboBox" Width="563" FontSize="20" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,5,5,0" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Pensum" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="Gray" SelectionChanged="PensumComboBox_SelectionChanged"/>
 
-            <ComboBox Name="PensumComboBox" Width="563" FontSize="20" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,5,5,0" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Pensum" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="White" SelectionChanged="PensumComboBox_SelectionChanged"/>
-
-
-            <DatePicker Name="FechaIngresoDatePicker" FontSize="20" SelectedDate="{Binding FechaIngreso}" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Fecha Ingreso" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="White"/>
+            <!--Fecha Ingreso-->
+            <DatePicker Name="FechaIngresoDatePicker" FontSize="20" SelectedDate="{Binding FechaIngreso}" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Fecha Ingreso" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0" Foreground="Gray"/>
             
             <!--Panel de TextBox-->
             <GroupBox Margin="5,14,0,0" materialDesign:ColorZoneAssist.Background="#FFF79D00" materialDesign:ColorZoneAssist.Mode="Custom">

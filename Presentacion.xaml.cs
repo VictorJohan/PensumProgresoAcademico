@@ -23,11 +23,7 @@ namespace PensumProgresoAcademico
         {
             InitializeComponent();
 
-            //Iniciar();
-
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            Iniciar();
         }
 
         async public void Iniciar()
