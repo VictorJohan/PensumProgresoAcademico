@@ -30,7 +30,7 @@
         
                 <DataGrid.Columns>
                     
-                    <DataGridTextColumn Header="Pensum Id" Foreground="White"  IsReadOnly="True" Binding="{Binding PensumId}"/>
+                    <DataGridTextColumn Header="Pensum Id" IsReadOnly="True" Binding="{Binding PensumId}"/>
                     <DataGridTextColumn Header="Carrera" IsReadOnly="True" Binding="{Binding Carrera}"/>
                     <DataGridTextColumn Header="Duración" IsReadOnly="True" Binding="{Binding Duracion}"/>
                     <DataGridTextColumn Header="Titulo" IsReadOnly="True" Binding="{Binding TituloOtorgar}"/>

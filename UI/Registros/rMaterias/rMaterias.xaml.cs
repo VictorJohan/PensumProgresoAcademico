@@ -2,6 +2,7 @@
 using PensumProgresoAcademico.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -114,7 +115,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
 
             //Valida el campo Horas Practicas
-            if (!Regex.IsMatch(HorasPracticasTextBox.Text, "^[1-9]{1,2}"))
+            if (!Regex.IsMatch(HorasPracticasTextBox.Text, "^[0-9]+$"))
             {
                 MessageBox.Show("La cantidad de horas practicas que ingresaste no es valida.", "Campos Horas Practicas.",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -122,7 +123,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
 
             //Valida el campo Horas Teoricas
-            if (!Regex.IsMatch(HorasTeoricasTextBox.Text, "^[1-9]{1,2}"))
+            if (!Regex.IsMatch(HorasTeoricasTextBox.Text, "^[0-9]+$"))
             {
                 MessageBox.Show("La cantidad de horas teoricas que ingresaste no es valida.", "Ya hay una materia con este nombre.",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -130,12 +131,15 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
 
             //Valida que no se creen dos materias con el mismo nombre
-            var existe = MateriasBLL.GetMaterias(m => m.Descripcion == DescripcionTextBox.Text);
-            if(existe != null)
+            var materia = MateriasBLL.ExisteMateria(DescripcionTextBox.Text);
+            if (materia != null)
             {
-                MessageBox.Show($"El nombre de está materia ya existe, puede consultar la materia en el apartado de consultas.", 
-                    "Campos Horas Teoricas.", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return false;
+                if ((DescripcionTextBox.Text == materia.Descripcion) && ClaveTextBox.Text != materia.Clave)
+                {
+                    MessageBox.Show($"Esta materia ya existe con la clave: {materia.Clave}.", "Aviso.",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    return false;
+                }
             }
 
             return true;

@@ -18,6 +18,8 @@ namespace PensumProgresoAcademico.DAL
         {
             optionsBuilder.UseSqlite(@"Data Source= DATA\PensumProgresoAcademico.db");
         }
+
+        
     }
     
 }

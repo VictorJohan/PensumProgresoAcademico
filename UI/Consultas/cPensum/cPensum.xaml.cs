@@ -20,7 +20,7 @@ namespace PensumProgresoAcademico.UI.Consultas.cPensum
     /// </summary>
     public partial class cPensum : Window
     {
-        string[] filtro = { "Pensum Id", "Carrera", "Duración", "Titulo", "Total Materias", "Horas Teoricas", "Horas Practicas", "Créditos" };
+        string[] filtro = { "Pensum Id", "Carrera", "Duración", "Titulo", "Total Materias", "Horas Teoricas", "Horas Practicas", "Créditos", "Todo" };
         public cPensum()
         {
             InitializeComponent();
@@ -30,7 +30,8 @@ namespace PensumProgresoAcademico.UI.Consultas.cPensum
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             List<Pensum> lista = new List<Pensum>();
-            if (FiltroComboBox.SelectedIndex != -1)
+            if (FiltroComboBox.SelectedIndex == -1) { return; }
+            if (FiltroComboBox.SelectedItem.ToString() != "Todo")
             {
                 switch (FiltroComboBox.SelectedItem.ToString())
                 {
@@ -103,7 +104,7 @@ namespace PensumProgresoAcademico.UI.Consultas.cPensum
             }
 
             DetalleDataGrid.ItemsSource = lista;
-            FiltroComboBox.SelectedIndex = -1;
+            
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)

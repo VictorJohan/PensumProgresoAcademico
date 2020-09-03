@@ -179,5 +179,30 @@ namespace PensumProgresoAcademico.BLL
 
             return lista;
         }
+
+        public static Materias ExisteMateria(string descripcion)
+        {
+            Contexto contexto = new Contexto();
+            List<Materias> lista = new List<Materias>();
+            Materias materia;
+
+            try
+            {
+                lista = contexto.Materias.ToList();
+                materia = lista.Find(m => m.Descripcion == descripcion);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return materia;
+        }
     }
 }
