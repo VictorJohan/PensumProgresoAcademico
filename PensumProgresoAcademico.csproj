@@ -11,6 +11,7 @@
 		<ApplicationIcon>murcielago.ico</ApplicationIcon>
 		<Company>Gray Skay</Company>
 		<Version>1.0.0</Version>
+		<PackageId>My Academy Progress</PackageId>
 	</PropertyGroup>
 
 	<ItemGroup>
