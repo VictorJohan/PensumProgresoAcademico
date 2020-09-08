@@ -21,8 +21,8 @@
             <Image Source="/Resources/portada.jpg" />
 
             <StackPanel Orientation="Horizontal" Height="83"   Background="Black" Margin="0,1,0,0" >
-                <MediaElement Name="LogoMediaElement" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\GrayskayAnimed.mp4"/>
-                <MediaElement Name="TituloMediaElement" Stretch="Uniform" Source="C:\Users\vicjo\Desktop\MisProyectosC#\PensumProgresoAcademico\Resources\Title.mp4" Margin="80,0,0,0"/>
+                <MediaElement Name="LogoMediaElement" Stretch="Uniform" Source="\Resources\GrayskayAnimed.mp4"/>
+                <MediaElement Name="TituloMediaElement" Stretch="Uniform" Source="\Resources\Title.mp4" Margin="80,0,0,0"/>
             </StackPanel>
 
             <Label Content="V1.0(Beta) by © Gray Skay 2020" FontStyle="Italic" Foreground="White"  Background="#FFDA951A"/>
