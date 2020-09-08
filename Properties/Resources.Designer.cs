@@ -63,9 +63,99 @@ namespace PensumProgresoAcademico.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] birrete {
+            get {
+                object obj = ResourceManager.GetObject("birrete", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] colegio {
+            get {
+                object obj = ResourceManager.GetObject("colegio", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] GrayskayAnimedLigth {
+            get {
+                object obj = ResourceManager.GetObject("GrayskayAnimedLigth", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] GrayskayLogo {
             get {
                 object obj = ResourceManager.GetObject("GrayskayLogo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] inscripcion {
+            get {
+                object obj = ResourceManager.GetObject("inscripcion", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] materia {
+            get {
+                object obj = ResourceManager.GetObject("materia", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] murcielago {
+            get {
+                object obj = ResourceManager.GetObject("murcielago", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pensum {
+            get {
+                object obj = ResourceManager.GetObject("pensum", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Title {
+            get {
+                object obj = ResourceManager.GetObject("Title", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -20,17 +20,19 @@ namespace PensumProgresoAcademico.UI.Consultas.cMaterias
     /// </summary>
     public partial class cMaterias : Window
     {
-        string[] filtro = { "Clave", "Descripción", "Horas Practicas", "Horas Teoricas", "Créditos" };
+        //Se crean un array de srtrings con las opciones.
+        string[] filtro = { "Clave", "Descripción", "Horas Practicas", "Horas Teoricas", "Créditos", "Todo" };
         public cMaterias()
         {
             InitializeComponent();
-            FiltroComboBox.ItemsSource = filtro;
+            FiltroComboBox.ItemsSource = filtro;//Se le pasa el array al ComboBox.
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             List<Materias> lista = new List<Materias>();
-            if (FiltroComboBox.SelectedIndex != -1)
+            if (FiltroComboBox.SelectedIndex == -1) { return; }//Si no hay nada selecionado sale del evento
+            if (FiltroComboBox.SelectedItem.ToString() != "Todo")
             {
                 switch (FiltroComboBox.SelectedItem.ToString())
                 {
@@ -79,8 +81,18 @@ namespace PensumProgresoAcademico.UI.Consultas.cMaterias
             }
 
             DetalleDataGrid.ItemsSource = lista;
-            FiltroComboBox.SelectedIndex = -1;
         }
-             
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            this.Topmost = false;
+            this.Focus();
+        }
+
+        private void Window_Initialized(object sender, EventArgs e)
+        {
+            this.Topmost = true;
+            this.Focus();
+        }
     }
 }

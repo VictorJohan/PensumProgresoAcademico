@@ -20,17 +20,21 @@ namespace PensumProgresoAcademico.UI.Registros
     /// </summary>
     public partial class rEstudiantes : Window
     {
-
         private Estudiantes Estudiante = new Estudiantes();
+
+        //Constructor
         public rEstudiantes()
         {
             InitializeComponent();
+            //Se le agregan los pensum al comboBox
             PensumComboBox.ItemsSource = PensumBLL.GetPensum();
             PensumComboBox.SelectedValuePath = "PensumId";
             PensumComboBox.DisplayMemberPath = "Carrera";
+            //Se inicializan los campos del WPF.
             this.DataContext = Estudiante;
         }
 
+        //Busca un registro en la base de datos.
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             var encontrado = EstudiantesBLL.Buscar(int.Parse(MatriculaTextBox.Text));
@@ -47,16 +51,18 @@ namespace PensumProgresoAcademico.UI.Registros
             }
         }
 
+        //Limpia el formulario para crear un nuevo registro.
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
         }
 
+        //Guarda un registro en la base de datos.
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar())
                 return;
-            if (!Confirmacion())
+            if (!Confirmacion())//Pregunta al usuario si realmente desea cambiar de pensum
                 return;
 
             if (EstudiantesBLL.Guardar(Estudiante))
@@ -72,6 +78,7 @@ namespace PensumProgresoAcademico.UI.Registros
             }
         }
 
+        //Elimina un registro de la base de datos
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             if (EstudiantesBLL.Eliminar(int.Parse(MatriculaTextBox.Text)))
@@ -87,12 +94,14 @@ namespace PensumProgresoAcademico.UI.Registros
             }
         }
 
+        //Limpia el WPF
         public void Limpiar()
         {
             Estudiante = new Estudiantes();
             this.DataContext = Estudiante;
         }
 
+        //Valida todos los campos del WPF.
         public bool Validar()
         {
             //Valida que sea una matricula valida
@@ -150,6 +159,7 @@ namespace PensumProgresoAcademico.UI.Registros
             return true;
         }
 
+        //Asigna un pensum a un estudiante
         private void PensumComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (PensumComboBox.SelectedIndex == -1)
@@ -168,6 +178,7 @@ namespace PensumProgresoAcademico.UI.Registros
 
         }
 
+        //Pregunta al usuario si realmente desea cambiar de pensum
         public bool Confirmacion()
         {
             if (EstudiantesBLL.Existe(int.Parse(MatriculaTextBox.Text)))
@@ -195,6 +206,18 @@ namespace PensumProgresoAcademico.UI.Registros
 
         }
 
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            this.Topmost = false;
+            this.Focus();
+        }
+
+        //Hace Focus al WPF para que aparezca en primera plana cuando se invoque.
+        private void Window_Initialized(object sender, EventArgs e)
+        {
+            this.Topmost = true;
+            this.Focus();
+        }
 
     }
 }

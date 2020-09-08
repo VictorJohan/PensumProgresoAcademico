@@ -6,10 +6,12 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Estudiantes" Height="450" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        ContentRendered="Window_ContentRendered"
+        Initialized="Window_Initialized"
+        Title="Registro Estudiantes" Height="450" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"  Icon="/Resources/birrete.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
-           
+
             <!--TextBox/Boton Buscar-->
             <StackPanel Orientation="Horizontal">
                 <!--TextBox-->
@@ -22,12 +24,12 @@
             <TextBox Name="NombresTextBox" Text="{Binding Nombres}" FontSize="20" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Nombres" materialDesign:HintAssist.IsFloating="True"/>
 
             <!--Pensum-->
-            
+
             <ComboBox Name="PensumComboBox" Width="563" FontSize="20" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,5,5,0" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Pensum" materialDesign:HintAssist.IsFloating="True"  SelectionChanged="PensumComboBox_SelectionChanged"/>
 
 
             <DatePicker Name="FechaIngresoDatePicker" FontSize="20" SelectedDate="{Binding FechaIngreso}" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Fecha Ingreso" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0"/>
-            
+
             <!--Panel de TextBox-->
             <GroupBox Margin="5,14,0,0">
                 <GroupBox.Header>
@@ -52,7 +54,7 @@
                 <Button Name="EliminarButton" Height="20" Background="Snow" Content="Eliminar" FontSize="11" Padding="16,1,16,4" Click="EliminarButton_Click" Margin="5,0,0,0"/>
 
             </StackPanel>
-            
+
         </StackPanel>
     </Grid>
 </Window>

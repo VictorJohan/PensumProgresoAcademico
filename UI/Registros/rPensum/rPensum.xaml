@@ -6,7 +6,9 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Registros.rPensum"
         mc:Ignorable="d"
-        Title="Registro Pensum" Height="700" Width="1360" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        ContentRendered="Window_ContentRendered"
+        Initialized="Window_Initialized"
+        Title="Registro Pensum" Height="700" Width="1360" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Resources/pensum.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--PensumId-->
@@ -14,10 +16,10 @@
                 <TextBox Name="PensumIdTextBox" Width="1245" Text="{Binding PensumId}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Pensum Id" materialDesign:HintAssist.IsFloating="True"/>
                 <Button Name="BuscarButton" Height="20" Content="Buscar" Background="Snow" FontSize="11" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
             </StackPanel>
-            
+
             <!--En este panel hay dos paneles para organizar los campos-->
             <StackPanel Orientation="Horizontal" >
-                
+
                 <!--Panel lateral izquierdo-->
                 <StackPanel Orientation="Vertical">
                     <!--Carrera-->
@@ -41,7 +43,7 @@
                     <!--Pensum Horas Teoricas-->
                     <TextBox Name="PensumHorasTeoricasTextBox" Width="300" IsReadOnly="True" Text="{Binding PensumHorasTeoricas}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Horas Teoricas" materialDesign:HintAssist.IsFloating="True"/>
                 </StackPanel>
-                
+
             </StackPanel>
 
             <!--PensumId-->
@@ -52,7 +54,7 @@
                     <Label Content="Pensum Detalle" FontSize="15" Foreground="White"/>
                 </GroupBox.Header>
                 <StackPanel Orientation="Vertical">
-                    
+
                     <!--Panel de TextBox-->
                     <StackPanel Orientation="Horizontal">
                         <!--Materia-->
@@ -75,12 +77,12 @@
 
                         <!--Boton agregar-->
                         <Button Name="AgregarButton" Height="20" Content="Agregar" Background="Snow"  FontSize="11" Click="AgregarButton_Click" Padding="16,1,16,4" Margin="10,23,0,0"/>
-                        
+
                     </StackPanel>
 
                     <!--DataGrid-->
                     <DataGrid Name="DetalleDataGrid" Width="1286" Height="160" AutoGenerateColumns="False" 
-                              AlternatingRowBackground="#FF41CF41" HorizontalAlignment="Left"
+                              AlternatingRowBackground="#FF3FB7FB" HorizontalAlignment="Left"
                               ItemsSource="{Binding PensumDetalles}" Margin="0,5,0,0" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Clave" IsReadOnly="True" Binding="{Binding Clave}"/>
@@ -109,7 +111,7 @@
                 <Button Name="EliminarButton" Height="20" Background="Snow" Content="Eliminar" FontSize="11" Padding="16,1,16,4" Click="EliminarButton_Click" Margin="5,0,0,0"/>
 
             </StackPanel>
-            
+
         </StackPanel>
     </Grid>
 </Window>

@@ -7,11 +7,31 @@
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<UseWPF>true</UseWPF>
+		<AssemblyName>Progreso Academico</AssemblyName>
+		<ApplicationIcon>colegioIco.ico</ApplicationIcon>
+		<Company>Gray Skay</Company>
+		<Version>1.0.0</Version>
+		<PackageId>My Academy Progress</PackageId>
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Academic.mp4" />
+	  <None Remove="Resources\batmanWallpaper.jpg" />
+	  <None Remove="Resources\birrete.png" />
+	  <None Remove="Resources\colegio.png" />
+	  <None Remove="Resources\Gray skay.mp4" />
 	  <None Remove="Resources\GraySkay.png" />
+	  <None Remove="Resources\GrayskayDarkLog.png" />
 	  <None Remove="Resources\GrayskayLogo.png" />
+	  <None Remove="Resources\inscripcion.png" />
+	  <None Remove="Resources\materia.png" />
+	  <None Remove="Resources\murcielago.png" />
+	  <None Remove="Resources\My.mp4" />
+	  <None Remove="Resources\pensum.png" />
+	  <None Remove="Resources\portada.jpg" />
+	  <None Remove="Resources\Progress.mp4" />
+	  <None Remove="Resources\search.png" />
+	  <None Remove="Resources\Title.mp4" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -28,8 +48,55 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="Resources\GraySkay.png" />
-	  <Resource Include="Resources\GrayskayLogo.png" />
+	  <Resource Include="Resources\batmanWallpaper.jpg">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\birrete.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\colegio.png" />
+	  <Resource Include="Resources\Gray skay.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\GraySkay.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\GrayskayDarkLog.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\GrayskayLogo.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Academic.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\inscripcion.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\materia.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\murcielago.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\pensum.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\portada.jpg">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Progress.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\My.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\search.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Title.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
 	</ItemGroup>
 
 	<ItemGroup>
