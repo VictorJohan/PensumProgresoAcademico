@@ -19,6 +19,7 @@ namespace PensumProgresoAcademico.DAL
             optionsBuilder.UseSqlite(@"Data Source= DATA\PensumProgresoAcademico.db");
         }
 
+        //Se crearon todas las materias del pensum
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 

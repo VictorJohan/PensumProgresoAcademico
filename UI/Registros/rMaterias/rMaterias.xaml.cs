@@ -22,17 +22,20 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
     public partial class rMaterias : Window
     {
         private Materias Materia = new Materias();
+        //Constructor
         public rMaterias()
         {
             InitializeComponent();
             this.DataContext = Materia;
         }
 
+        //Limpia el WPF para dar lugar a un nuevo registro.
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
         }
 
+        //Guarda un registro en la base de datos.
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar())
@@ -51,6 +54,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
         }
 
+        //Elimina un registro de la base de datos.
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             if (MateriasBLL.Eliminar(ClaveTextBox.Text))
@@ -66,12 +70,14 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
         }
 
+        //Limpia el WPF.
         public void Limpiar()
         {
             Materia = new Materias();
             this.DataContext = Materia;
         }
 
+        //Busca un registro a medida que se va ingresando un caracter. 
         private void ClaveTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             var encontrado = MateriasBLL.Buscar(ClaveTextBox.Text);
@@ -87,6 +93,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
         }
 
+        //Limpia el WPF si la clave no coincide con la de algun registro.
         public void LimpiarEnBusqueda()
         {
             DescripcionTextBox.Clear();
@@ -95,6 +102,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             HorasTeoricasTextBox.Clear();
         }
 
+        //Valida todos los campos del WPF.
         public bool Validar()
         {
             //Valida que no haya campos vacios

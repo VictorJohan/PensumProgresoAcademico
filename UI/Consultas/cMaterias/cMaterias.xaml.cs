@@ -20,17 +20,18 @@ namespace PensumProgresoAcademico.UI.Consultas.cMaterias
     /// </summary>
     public partial class cMaterias : Window
     {
+        //Se crean un array de srtrings con las opciones.
         string[] filtro = { "Clave", "Descripción", "Horas Practicas", "Horas Teoricas", "Créditos", "Todo" };
         public cMaterias()
         {
             InitializeComponent();
-            FiltroComboBox.ItemsSource = filtro;
+            FiltroComboBox.ItemsSource = filtro;//Se le pasa el array al ComboBox.
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             List<Materias> lista = new List<Materias>();
-            if (FiltroComboBox.SelectedIndex == -1) { return; }
+            if (FiltroComboBox.SelectedIndex == -1) { return; }//Si no hay nada selecionado sale del evento
             if (FiltroComboBox.SelectedItem.ToString() != "Todo")
             {
                 switch (FiltroComboBox.SelectedItem.ToString())

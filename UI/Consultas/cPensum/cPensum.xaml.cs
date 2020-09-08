@@ -20,17 +20,18 @@ namespace PensumProgresoAcademico.UI.Consultas.cPensum
     /// </summary>
     public partial class cPensum : Window
     {
+        //Se crean un array de srtrings con las opciones.
         string[] filtro = { "Pensum Id", "Carrera", "Duración", "Titulo", "Total Materias", "Horas Teoricas", "Horas Practicas", "Créditos", "Todo" };
         public cPensum()
         {
             InitializeComponent();
-            FiltroComboBox.ItemsSource = filtro;
+            FiltroComboBox.ItemsSource = filtro;//Se le pasa el array al ComboBox.
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             List<Pensum> lista = new List<Pensum>();
-            if (FiltroComboBox.SelectedIndex == -1) { return; }
+            if (FiltroComboBox.SelectedIndex == -1) { return; }//Si no hay nada selecionado sale del evento
             if (FiltroComboBox.SelectedItem.ToString() != "Todo")
             {
                 switch (FiltroComboBox.SelectedItem.ToString())

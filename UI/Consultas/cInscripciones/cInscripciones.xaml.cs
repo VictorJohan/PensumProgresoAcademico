@@ -20,17 +20,18 @@ namespace PensumProgresoAcademico.UI.Consultas.cInscripciones
     /// </summary>
     public partial class cInscripciones : Window
     {
+        //Se crean un array de srtrings con las opciones.
         string[] filtro = { "Inscripcion Id", "Estudiante Matricula", "Créditos Selccionados", "Cantidad Materia", "Fecha", "Todo" };
         public cInscripciones()
         {
             InitializeComponent();
-            FiltroComboBox.ItemsSource = filtro;
+            FiltroComboBox.ItemsSource = filtro;//Se le pasa el array al ComboBox.
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             List<Inscripciones> lista = new List<Inscripciones>();
-            if (FiltroComboBox.SelectedIndex == -1) { return; }
+            if (FiltroComboBox.SelectedIndex == -1) { return; }//Si no hay nada selecionado sale del evento
             if (FiltroComboBox.SelectedItem.ToString() != "Todo")
             {
                 switch (FiltroComboBox.SelectedItem.ToString())
