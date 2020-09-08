@@ -22,21 +22,21 @@
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Height="335" Width="237">
-                    <MediaElement Name="Titulo1MediaElement" Height="335" Stretch="Uniform" HorizontalAlignment="Left" Source="\Resources\My.mp4"/>
+                    <MediaElement Name="Titulo1MediaElement" Height="335" Stretch="Uniform" HorizontalAlignment="Left" Source="C:\Users\vicjo\Documents\MisProyectosC#\PensumProgresoAcademico\Resources\My.mp4"/>
                 </StackPanel>
 
 
                 <StackPanel Orientation="Vertical" Height="335" Width="237">
-                    <MediaElement Name="Titulo3MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="\Resources\Academic.mp4"/>
+                    <MediaElement Name="Titulo3MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="C:\Users\vicjo\Documents\MisProyectosC#\PensumProgresoAcademico\Resources\Academic.mp4"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Height="335" Width="237">
-                    <MediaElement Name="Titulo2MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="\Resources\Progress.mp4"/>
+                    <MediaElement Name="Titulo2MediaElement" Height="335" HorizontalAlignment="Left" Stretch="Uniform" Source="C:\Users\vicjo\Documents\MisProyectosC#\PensumProgresoAcademico\Resources\Progress.mp4"/>
                 </StackPanel>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" Height="83"   Background="White" Margin="0,1,0,0" >
-                <MediaElement Name="LogoMediaElement" Stretch="Uniform" Source="\Resources\GrayskayAnimedLigth.mp4"/>
+                <MediaElement Name="LogoMediaElement" Stretch="Uniform" Source="C:\Users\vicjo\Documents\MisProyectosC#\PensumProgresoAcademico\Resources\GrayskayAnimedLigth.mp4"/>
             </StackPanel>
 
             <Label Content="V1.0 by © Gray Skay 2020" FontStyle="Italic" Background="LightBlue"/>
