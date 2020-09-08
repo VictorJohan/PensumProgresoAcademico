@@ -6,9 +6,8 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:PensumProgresoAcademico"
         mc:Ignorable="d"
-        Title="Presentacion" Height="455" Width="722" WindowStartupLocation="CenterScreen" WindowStyle="None">
-
-
+        Title="Presentacion" Height="455" Width="722" WindowStartupLocation="CenterScreen" Icon="\Resources\colegio.png">
+       
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF0E8FAC"/>

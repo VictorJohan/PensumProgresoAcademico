@@ -8,37 +8,38 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Registro Estudiantes" Height="450" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717"  Icon="/Resources/birrete.png">
+        Title="Registro Estudiantes" Height="450" Width="610" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"  Icon="/Resources/birrete.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
-           
+
             <!--TextBox/Boton Buscar-->
             <StackPanel Orientation="Horizontal">
                 <!--TextBox-->
-                <TextBox Name="MatriculaTextBox" Text="{Binding Matricula}" FontSize="20" Width="498" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Matrícula" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
+                <TextBox Name="MatriculaTextBox" Text="{Binding Matricula}" FontSize="20" Width="498" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Matrícula" materialDesign:HintAssist.IsFloating="True" />
                 <!--Boton-->
                 <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
             </StackPanel>
 
             <!--Nombres-->
-            <TextBox Name="NombresTextBox" Text="{Binding Nombres}" FontSize="20" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Nombres" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
+            <TextBox Name="NombresTextBox" Text="{Binding Nombres}" FontSize="20" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Nombres" materialDesign:HintAssist.IsFloating="True"/>
 
             <!--Pensum-->
-            <ComboBox Name="PensumComboBox" Width="563" FontSize="20" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,5,5,0" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Pensum" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="Gray" SelectionChanged="PensumComboBox_SelectionChanged"/>
 
-            <!--Fecha Ingreso-->
-            <DatePicker Name="FechaIngresoDatePicker" FontSize="20" SelectedDate="{Binding FechaIngreso}" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Fecha Ingreso" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0" Foreground="Gray"/>
-            
+            <ComboBox Name="PensumComboBox" Width="563" FontSize="20" SelectedValue="{Binding PensumId}" HorizontalAlignment="Left" Margin="5,5,5,0" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Pensum" materialDesign:HintAssist.IsFloating="True"  SelectionChanged="PensumComboBox_SelectionChanged"/>
+
+
+            <DatePicker Name="FechaIngresoDatePicker" FontSize="20" SelectedDate="{Binding FechaIngreso}" Width="563" HorizontalAlignment="Left" Margin="5,5,5,0" materialDesign:HintAssist.Hint="Fecha Ingreso" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0"/>
+
             <!--Panel de TextBox-->
-            <GroupBox Margin="5,14,0,0" materialDesign:ColorZoneAssist.Background="#FFF79D00" materialDesign:ColorZoneAssist.Mode="Custom">
+            <GroupBox Margin="5,14,0,0">
                 <GroupBox.Header>
                     <Label Content="Pendientes" FontSize="15" Foreground="White"/>
                 </GroupBox.Header>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Name="MateriasPendientesTextBox" FontSize="15" Text="{Binding MateriasPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Materias" materialDesign:HintAssist.IsFloating="True" Margin="5,0,5,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
-                    <TextBox Name="CreditosPendientesTextBox" FontSize="15" Text="{Binding CreditosPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Creditos" materialDesign:HintAssist.IsFloating="True" Margin="5,0,5,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
-                    <TextBox Name="HorasPracticasPendientesTextBox" FontSize="15" Text="{Binding HorasPracticasPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" Margin="5,0,5,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
-                    <TextBox Name="HorasTeoricasPendientesTextBox" FontSize="15" Text="{Binding HorasTeoricasPendientes}" IsReadOnly="True"  Width="133" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Teoricas" materialDesign:HintAssist.IsFloating="True" Margin="5,0,5,0" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
+                    <TextBox Name="MateriasPendientesTextBox" FontSize="15" Text="{Binding MateriasPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Materias" materialDesign:HintAssist.IsFloating="True" Margin="5,0,5,0"/>
+                    <TextBox Name="CreditosPendientesTextBox" FontSize="15" Text="{Binding CreditosPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Creditos" materialDesign:HintAssist.IsFloating="True" Margin="5,0,5,0"/>
+                    <TextBox Name="HorasPracticasPendientesTextBox" FontSize="15" Text="{Binding HorasPracticasPendientes}" IsReadOnly="True" Width="133" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" Margin="5,0,5,0"/>
+                    <TextBox Name="HorasTeoricasPendientesTextBox" FontSize="15" Text="{Binding HorasTeoricasPendientes}" IsReadOnly="True"  Width="133" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Teoricas" materialDesign:HintAssist.IsFloating="True" Margin="5,0,5,0"/>
                 </StackPanel>
 
             </GroupBox>
@@ -53,7 +54,7 @@
                 <Button Name="EliminarButton" Height="20" Background="Snow" Content="Eliminar" FontSize="11" Padding="16,1,16,4" Click="EliminarButton_Click" Margin="5,0,0,0"/>
 
             </StackPanel>
-            
+
         </StackPanel>
     </Grid>
 </Window>

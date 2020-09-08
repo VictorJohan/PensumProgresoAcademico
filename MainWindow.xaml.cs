@@ -49,15 +49,16 @@ namespace PensumProgresoAcademico
             menuConsulta.Add(new SubItem("Inscripción"));
             var item2 = new ItemMenu("Consultas", menuConsulta, PackIconKind.Search);
 
-           
             MenuStackPanel.Children.Add(new UserControlMenuItem(item));
             MenuStackPanel.Children.Add(new UserControlMenuItem(item2));
-            
-            
-
 
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
 
+            Application.Current.Shutdown();
+
+        }
     }
 }

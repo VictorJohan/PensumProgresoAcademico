@@ -8,18 +8,18 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Cosulta Inscripciones" Height="450" Width="860" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717" Icon="/Resources/search.png">
+        Title="Cosulta Inscripciones" Height="450" Width="860" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Resources/search.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <StackPanel Orientation="Horizontal">
                 <!--Filtro-->
-                <ComboBox Name="FiltroComboBox" Width="300" FontSize="20" HorizontalAlignment="Left" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Filtro" materialDesign:HintAssist.IsFloating="True"  materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="Gray"/>
+                <ComboBox Name="FiltroComboBox" Width="300" FontSize="20" HorizontalAlignment="Left" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Filtro" materialDesign:HintAssist.IsFloating="True"/>
 
                 <!--Fecha-->
-                <DatePicker Name="FechaDatePicker" FontSize="20" Width="200" materialDesign:HintAssist.Hint="Fecha" materialDesign:HintAssist.IsFloating="True"  materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="Gray" Padding="2,0,2,0" Height="43.1" Margin="30,0,0,0"/>
+                <DatePicker Name="FechaDatePicker" FontSize="20" Width="200" materialDesign:HintAssist.Hint="Fecha" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0" Height="43.1" Margin="30,0,0,0"/>
 
                 <!--Criterio-->
-                <TextBox Name="CriterioTextBox" FontSize="20" Width="100" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Criterio" materialDesign:HintAssist.IsFloating="True" Height="43.1" Padding="0,-5,0,0" Margin="60,0,0,0"  materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
+                <TextBox Name="CriterioTextBox" FontSize="20" Width="100" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Criterio" materialDesign:HintAssist.IsFloating="True" Height="43.1" Padding="0,-5,0,0" Margin="60,0,0,0"/>
 
                 <!--Boton-->
                 <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="43,23,0,0"/>
@@ -28,7 +28,7 @@
 
             <!--DataGrid-->
             <DataGrid Name="DetalleDataGrid"  Height="340" AutoGenerateColumns="False" 
-                              AlternatingRowBackground="#FDE255"
+                              AlternatingRowBackground="#FF3FB7FB"
                               ItemsSource="{Binding Inscripciones}" Margin="0,10,0,0">
 
                 <DataGrid.Columns>

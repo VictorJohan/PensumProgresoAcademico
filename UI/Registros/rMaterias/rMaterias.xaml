@@ -8,24 +8,26 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Registro Materias" Height="400" Width="630" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717"  Icon="/Resources/materia.png">
+        Title="Registro Materias" Height="400" Width="630" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="\Resources\materia.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--TextBox Clave y Boton Buscar-->
 
-            <TextBox Name="ClaveTextBox" Width="550"  Text="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" Margin="5,0"  materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White" TextChanged="ClaveTextBox_TextChanged" />
+            <TextBox Name="ClaveTextBox" Width="550" Text="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" TextChanged="ClaveTextBox_TextChanged"/>
+
+
 
             <!--Descripcion-->
-            <TextBox Name="DescripcionTextBox" Width="550" Text="{Binding Descripcion}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Descripción" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White" materialDesign:HintAssist.IsFloating="True"/>
+            <TextBox Name="DescripcionTextBox" Width="550" Text="{Binding Descripcion}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Descripción" materialDesign:HintAssist.IsFloating="True"/>
 
             <!--Creditos-->
-            <TextBox Name="CreditosTextBox" Width="550" Text="{Binding Creditos}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Creditos" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
+            <TextBox Name="CreditosTextBox" Width="550" Text="{Binding Creditos}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Creditos" materialDesign:HintAssist.IsFloating="True"/>
 
             <!--Horas Practicas-->
-            <TextBox Name="HorasPracticasTextBox" Width="550" Text="{Binding HorasPracticas}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
+            <TextBox Name="HorasPracticasTextBox" Width="550" Text="{Binding HorasPracticas}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True"/>
 
             <!--Horas Practicas-->
-            <TextBox Name="HorasTeoricasTextBox" Width="550" Text="{Binding HorasTeoricas}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Horas Teoricas" materialDesign:HintAssist.IsFloating="True" materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White"/>
+            <TextBox Name="HorasTeoricasTextBox" Width="550" Text="{Binding HorasTeoricas}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Horas Teoricas" materialDesign:HintAssist.IsFloating="True"/>
 
 
             <!--Panel de botones-->

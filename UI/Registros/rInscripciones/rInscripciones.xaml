@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Registrar Inscripciones" Height="690" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registrar Inscripciones" Height="690" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="\Resources\inscripcion.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--TextBox Inscripcion Id y Boton-->
@@ -18,13 +18,13 @@
                 <!--Boton-->
                 <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
             </StackPanel>
-            
+
             <!--Matricula/Estudiante-->
             <ComboBox Name="MatriculaComboBox" FontSize="20" SelectedValue="{Binding Matricula}" Margin="5,0" materialDesign:HintAssist.Hint="Estudiante" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MatriculaComboBox_SelectionChanged"/>
 
             <!--Fecha-->
             <DatePicker Name="FechaDatePicker" FontSize="20" SelectedDate="{Binding Fecha}"  Margin="5,0,5,0" materialDesign:HintAssist.Hint="Fecha" materialDesign:HintAssist.IsFloating="True" Padding="2,0,2,0"/>
-            
+
             <!--Creditos-->
             <TextBox Name="CreditosSelccionadosTextBox" IsReadOnly="True" FontSize="20" Text="{Binding CreditosSelccionados}" Margin="5,0" materialDesign:HintAssist.Hint="Creditos Selccionados" materialDesign:HintAssist.IsFloating="True"/>
 
@@ -35,7 +35,7 @@
                 <GroupBox.Header>
                     <Label Content="Inscripción Detalle" FontSize="15" Foreground="White"/>
                 </GroupBox.Header>
-                
+
                 <StackPanel Orientation="Vertical">
 
                     <!--Panel de TextBox-->
@@ -57,7 +57,7 @@
                     </StackPanel>
 
                     <!--DataGrid-->
-                    <DataGrid Name="DetalleDataGrid"  Height="160" AutoGenerateColumns="False" AlternatingRowBackground="#FF41CF41"
+                    <DataGrid Name="DetalleDataGrid"  Height="160" AutoGenerateColumns="False" AlternatingRowBackground="#FF3FB7FB"
                               ItemsSource="{Binding InscripcionesDetalles}" Margin="0,5,0,0" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Clave"  IsReadOnly="True" Binding="{Binding Clave}"/>

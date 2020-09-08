@@ -34,5 +34,6 @@ namespace PensumProgresoAcademico
             mainWindow.Show();
             this.Close();
         }
+
     }
 }

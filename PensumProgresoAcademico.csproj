@@ -8,7 +8,7 @@
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<AssemblyName>Progreso Academico</AssemblyName>
-		<ApplicationIcon>murcielago.ico</ApplicationIcon>
+		<ApplicationIcon>colegioIco.ico</ApplicationIcon>
 		<Company>Gray Skay</Company>
 		<Version>1.0.0</Version>
 		<PackageId>My Academy Progress</PackageId>
@@ -18,6 +18,7 @@
 	  <None Remove="Resources\Academic.mp4" />
 	  <None Remove="Resources\batmanWallpaper.jpg" />
 	  <None Remove="Resources\birrete.png" />
+	  <None Remove="Resources\colegio.png" />
 	  <None Remove="Resources\Gray skay.mp4" />
 	  <None Remove="Resources\GraySkay.png" />
 	  <None Remove="Resources\GrayskayDarkLog.png" />
@@ -53,6 +54,7 @@
 	  <Resource Include="Resources\birrete.png">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
+	  <Resource Include="Resources\colegio.png" />
 	  <Resource Include="Resources\Gray skay.mp4">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
