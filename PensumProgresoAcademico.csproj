@@ -20,8 +20,6 @@
 	  <None Remove="Resources\birrete.png" />
 	  <None Remove="Resources\Gray skay.mp4" />
 	  <None Remove="Resources\GraySkay.png" />
-	  <None Remove="Resources\GrayskayAnimed.mp4" />
-	  <None Remove="Resources\GrayskayAnimedLigth.mp4" />
 	  <None Remove="Resources\GrayskayDarkLog.png" />
 	  <None Remove="Resources\GrayskayLogo.png" />
 	  <None Remove="Resources\inscripcion.png" />
@@ -49,24 +47,54 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="Resources\batmanWallpaper.jpg" />
-	  <Resource Include="Resources\birrete.png" />
-	  <Resource Include="Resources\Gray skay.mp4" />
-	  <Resource Include="Resources\GraySkay.png" />
-	  <Resource Include="Resources\GrayskayAnimed.mp4" />
-	  <Resource Include="Resources\GrayskayAnimedLigth.mp4" />
-	  <Resource Include="Resources\GrayskayDarkLog.png" />
-	  <Resource Include="Resources\GrayskayLogo.png" />
-	  <Resource Include="Resources\Academic.mp4" />
-	  <Resource Include="Resources\inscripcion.png" />
-	  <Resource Include="Resources\materia.png" />
-	  <Resource Include="Resources\murcielago.png" />
-	  <Resource Include="Resources\pensum.png" />
-	  <Resource Include="Resources\portada.jpg" />
-	  <Resource Include="Resources\Progress.mp4" />
-	  <Resource Include="Resources\My.mp4" />
-	  <Resource Include="Resources\search.png" />
-	  <Resource Include="Resources\Title.mp4" />
+	  <Resource Include="Resources\batmanWallpaper.jpg">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\birrete.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Gray skay.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\GraySkay.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\GrayskayDarkLog.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\GrayskayLogo.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Academic.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\inscripcion.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\materia.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\murcielago.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\pensum.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\portada.jpg">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Progress.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\My.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\search.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Title.mp4">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
 	</ItemGroup>
 
 	<ItemGroup>
