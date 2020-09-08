@@ -2,6 +2,7 @@
 using PensumProgresoAcademico.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -21,17 +22,20 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
     public partial class rMaterias : Window
     {
         private Materias Materia = new Materias();
+        //Constructor
         public rMaterias()
         {
             InitializeComponent();
             this.DataContext = Materia;
         }
 
+        //Limpia el WPF para dar lugar a un nuevo registro.
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
         }
 
+        //Guarda un registro en la base de datos.
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar())
@@ -50,6 +54,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
         }
 
+        //Elimina un registro de la base de datos.
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             if (MateriasBLL.Eliminar(ClaveTextBox.Text))
@@ -65,12 +70,14 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
         }
 
+        //Limpia el WPF.
         public void Limpiar()
         {
             Materia = new Materias();
             this.DataContext = Materia;
         }
 
+        //Busca un registro a medida que se va ingresando un caracter. 
         private void ClaveTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             var encontrado = MateriasBLL.Buscar(ClaveTextBox.Text);
@@ -86,6 +93,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
         }
 
+        //Limpia el WPF si la clave no coincide con la de algun registro.
         public void LimpiarEnBusqueda()
         {
             DescripcionTextBox.Clear();
@@ -94,6 +102,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             HorasTeoricasTextBox.Clear();
         }
 
+        //Valida todos los campos del WPF.
         public bool Validar()
         {
             //Valida que no haya campos vacios
@@ -114,7 +123,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
 
             //Valida el campo Horas Practicas
-            if (!Regex.IsMatch(HorasPracticasTextBox.Text, "^[1-9]{1,2}"))
+            if (!Regex.IsMatch(HorasPracticasTextBox.Text, "^[0-9]+$"))
             {
                 MessageBox.Show("La cantidad de horas practicas que ingresaste no es valida.", "Campos Horas Practicas.",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -122,7 +131,7 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
 
             //Valida el campo Horas Teoricas
-            if (!Regex.IsMatch(HorasTeoricasTextBox.Text, "^[1-9]{1,2}"))
+            if (!Regex.IsMatch(HorasTeoricasTextBox.Text, "^[0-9]+$"))
             {
                 MessageBox.Show("La cantidad de horas teoricas que ingresaste no es valida.", "Ya hay una materia con este nombre.",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -130,12 +139,15 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             }
 
             //Valida que no se creen dos materias con el mismo nombre
-            var existe = MateriasBLL.GetMaterias(m => m.Descripcion == DescripcionTextBox.Text);
-            if(existe != null)
+            var materia = MateriasBLL.ExisteMateria(DescripcionTextBox.Text);
+            if (materia != null)
             {
-                MessageBox.Show($"El nombre de está materia ya existe, puede consultar la materia en el apartado de consultas.", 
-                    "Campos Horas Teoricas.", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return false;
+                if ((DescripcionTextBox.Text == materia.Descripcion) && ClaveTextBox.Text != materia.Clave)
+                {
+                    MessageBox.Show($"Esta materia ya existe con la clave: {materia.Clave}.", "Aviso.",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    return false;
+                }
             }
 
             return true;

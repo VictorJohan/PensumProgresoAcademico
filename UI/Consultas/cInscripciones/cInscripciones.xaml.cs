@@ -20,17 +20,19 @@ namespace PensumProgresoAcademico.UI.Consultas.cInscripciones
     /// </summary>
     public partial class cInscripciones : Window
     {
-        string[] filtro = { "Inscripcion Id", "Estudiante Matricula", "Créditos Selccionados", "Cantidad Materia", "Fecha" };
+        //Se crean un array de srtrings con las opciones.
+        string[] filtro = { "Inscripcion Id", "Estudiante Matricula", "Créditos Selccionados", "Cantidad Materia", "Fecha", "Todo" };
         public cInscripciones()
         {
             InitializeComponent();
-            FiltroComboBox.ItemsSource = filtro;
+            FiltroComboBox.ItemsSource = filtro;//Se le pasa el array al ComboBox.
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             List<Inscripciones> lista = new List<Inscripciones>();
-            if (FiltroComboBox.SelectedIndex != -1)
+            if (FiltroComboBox.SelectedIndex == -1) { return; }//Si no hay nada selecionado sale del evento
+            if (FiltroComboBox.SelectedItem.ToString() != "Todo")
             {
                 switch (FiltroComboBox.SelectedItem.ToString())
                 {
@@ -72,7 +74,7 @@ namespace PensumProgresoAcademico.UI.Consultas.cInscripciones
 
                     case "Fecha":
 
-                        lista = InscripcionesBLL.GetInscripciones(i => i.Fecha == FechaDatePicker.SelectedDate.Value);
+                        lista = InscripcionesBLL.GetInscripciones(i => i.Fecha.Year == FechaDatePicker.SelectedDate.Value.Year);
                         break;
                 }
             }
@@ -82,7 +84,6 @@ namespace PensumProgresoAcademico.UI.Consultas.cInscripciones
             }
 
             DetalleDataGrid.ItemsSource = lista;
-            FiltroComboBox.SelectedIndex = -1;
             FechaDatePicker.SelectedDate = null;
         }
 

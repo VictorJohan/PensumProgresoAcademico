@@ -20,17 +20,19 @@ namespace PensumProgresoAcademico.UI.Consultas.cEstudiantes
     /// </summary>
     public partial class cEstudiantes : Window
     {
-        string[] filtro = { "Matricula", "Nombres", "Materias Pendientes", "Créditos Pendientes",  "Horas Practicas Pendientes", "Horas Teoricas Pendientes", "Pensum Id" };
+        //Se crean un array de srtrings con las opciones.
+        string[] filtro = { "Matricula", "Nombres", "Materias Pendientes", "Créditos Pendientes",  "Horas Practicas Pendientes", "Horas Teoricas Pendientes", "Pensum Id", "Todo" };
         public cEstudiantes()
         {
             InitializeComponent();
-            FiltroComboBox.ItemsSource = filtro;
+            FiltroComboBox.ItemsSource = filtro;//Se le pasa el array al ComboBox.
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             List<Estudiantes> lista = new List<Estudiantes>();
-            if (FiltroComboBox.SelectedIndex != -1)
+            if(FiltroComboBox.SelectedIndex == -1) { return; }//Si no hay nada selecionado sale del evento
+            if (FiltroComboBox.SelectedItem.ToString() != "Todo")
             {
                 switch (FiltroComboBox.SelectedItem.ToString())
                 {
@@ -103,7 +105,6 @@ namespace PensumProgresoAcademico.UI.Consultas.cEstudiantes
             }
 
             DetalleDataGrid.ItemsSource = lista;
-            FiltroComboBox.SelectedIndex = -1;
         }
 
         private void Window_ContentRendered(object sender, EventArgs e)

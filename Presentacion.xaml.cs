@@ -22,9 +22,8 @@ namespace PensumProgresoAcademico
         public Presentacion()
         {
             InitializeComponent();
-           
+
             Iniciar();
-        
         }
 
         async public void Iniciar()

@@ -8,15 +8,15 @@
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
-        Title="Cosulta Pensum" Height="450" Width="1004" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Cosulta Pensum" Height="450" Width="1004" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#FF191717"  Icon="/Resources/search.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <StackPanel Orientation="Horizontal">
                 <!--Filtro-->
-                <ComboBox Name="FiltroComboBox" Width="300" FontSize="20" HorizontalAlignment="Left" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Filtro" materialDesign:HintAssist.IsFloating="True"/>
+                <ComboBox Name="FiltroComboBox" Width="300" FontSize="20" HorizontalAlignment="Left" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Filtro" materialDesign:HintAssist.IsFloating="True"  materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" Foreground="Gray"/>
 
                 <!--Criterio-->
-                <TextBox Name="CriterioTextBox" FontSize="20" Width="300" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Criterio" materialDesign:HintAssist.IsFloating="True" Height="43.1" Padding="0,-5,0,0" Margin="149,0,0,0" />
+                <TextBox Name="CriterioTextBox" FontSize="20" Width="300" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Criterio" materialDesign:HintAssist.IsFloating="True"  materialDesign:TextFieldAssist.UnderlineBrush="#FDE255" materialDesign:HintAssist.Foreground="#FDE255" CaretBrush="#FFFDE255" Foreground="White" Height="43.1" Padding="0,-5,0,0" Margin="149,0,0,0" />
 
                 <!--Boton-->
                 <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="149,23,0,0"/>
@@ -25,10 +25,11 @@
 
             <!--DataGrid-->
             <DataGrid Name="DetalleDataGrid"  Height="340" AutoGenerateColumns="False" 
-                              AlternatingRowBackground="#FF41CF41" 
+                              AlternatingRowBackground="#FDE255" 
                               ItemsSource="{Binding Pensum}" Margin="0,10,0,0">
-
+        
                 <DataGrid.Columns>
+                    
                     <DataGridTextColumn Header="Pensum Id" IsReadOnly="True" Binding="{Binding PensumId}"/>
                     <DataGridTextColumn Header="Carrera" IsReadOnly="True" Binding="{Binding Carrera}"/>
                     <DataGridTextColumn Header="Duración" IsReadOnly="True" Binding="{Binding Duracion}"/>

@@ -6,8 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PensumProgresoAcademico"
         mc:Ignorable="d"
-        Title="Progreso Académico" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <Grid>
+        Title="Progreso Académico" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized"  Icon="/Resources/murcielago.png">
+    <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
@@ -17,23 +17,28 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+        <materialDesign:ColorZone Mode="Custom" materialDesign:ColorZoneAssist.Background="#292928" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
             <Grid>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right" Margin="10"/>
             </Grid>
         </materialDesign:ColorZone>
+        
         <Grid HorizontalAlignment="Stretch" Grid.Row="1" Background="{StaticResource PrimaryHueMidBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="326*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Background="White">
-                <Image Source="/Resources/GraySkayLogo.png"/>
+            <Grid Grid.Row="0" Background="Black">
+                <Image Source="/Resources/GrayskayDarkLog.png"/>
             </Grid>
-            <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" Background="#292928" VerticalScrollBarVisibility="Auto" Grid.Row="1">
                 <StackPanel x:Name="MenuStackPanel" Margin="10"/>
             </ScrollViewer>
         </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Image Source="/Resources/batmanWallpaper.jpg" VerticalAlignment="Bottom"/>
+        </Grid>
+
 
     </Grid>
 </Window>

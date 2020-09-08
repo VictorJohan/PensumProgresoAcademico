@@ -24,6 +24,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
         private Inscripciones Inscripcion = new Inscripciones();
         private Materias Materia;
 
+        //Constructoe
         public rInscripciones()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             MateriaComboBox.DisplayMemberPath = "Descripcion";
         }
 
+        //Busca un registro en la base de datos
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar()) { return; }
@@ -56,6 +58,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             }
         }
 
+        //Agrega una materia al detalle de la inscripcion
         private void AgregarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!ValidarAgregar()) { return; }
@@ -81,6 +84,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             CreditosDetalleTextBox.Clear();
         }
 
+        //Remueve una materia del detalle
         private void RemoverButton_Click(object sender, RoutedEventArgs e)
         {
             if(DetalleDataGrid.SelectedIndex == -1) { return; }
@@ -94,11 +98,13 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
 
         }
 
+        //Limpia el WPF para dar lugar a un nuevo detalle.
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
         }
 
+        //Guarda un nuevo registro a la base de datos
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar()) { return; }
@@ -116,6 +122,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             }
         }
 
+        //Elimina un registro de la base de datos
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar()) { return; }
@@ -140,13 +147,14 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             }
         }
 
-
+        //Actualiza el WPF
         public void Cargar()
         {
             this.DataContext = null;
             this.DataContext = Inscripcion;
         }
 
+        //Permite agignar un estudiante a la inscripcion
         private void MatriculaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (MatriculaComboBox.SelectedIndex == -1)
@@ -157,6 +165,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             MateriaComboBox.ItemsSource = PensumBLL.GetPensumMaterias(estudiante.PensumId);
         }
 
+        //Permite selecionar una materia para luego agregarla al detalle de la inscripcion.
         private void MateriaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(MateriaComboBox.SelectedIndex == -1) { return; };
@@ -166,14 +175,17 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             CreditosDetalleTextBox.Text = Materia.Creditos.ToString();
         }
 
+        //Limpia el WPF
         public void Limpiar()
         {
             Inscripcion = new Inscripciones();
             this.DataContext = Inscripcion;
         }
 
+        //Valida todos los campos del WPF.
         public bool Validar()
         {
+            //Valida que el se haya ingresado un Id valido
             if(!Regex.IsMatch(InscripcionIdTextBox.Text, "^[1-9]+${1,5}"))
             {
                 MessageBox.Show("Asegúrese de haber introducido un Id de caracter numérico y diferente de cero.", 
@@ -184,8 +196,10 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             return true;
         }
 
+        //Valida el agregar.
         public bool ValidarAgregar()
         {
+            //Valida que se haya selcionado un estudiante
             if (MateriaComboBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecciona una materia para poder agregarla a la inscripcion.",
@@ -193,6 +207,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
                 return false;
             }
 
+            //Valida que no se ingrese una materia 2 veces en la misma inscripcion
             if(Inscripcion.InscripcionesDetalles.Any(i => i.Clave == MateriaComboBox.SelectedValue.ToString()))
             {
                 MessageBox.Show("Esta materia ya se encuntra agregada en la inscripción.", "Aviso.",
@@ -200,6 +215,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
                 return false;
             }
 
+            //Valida que no se agregue una materia que ya haya sido inscrita.
             if(InscripcionesBLL.MateriaInscrita(MateriaComboBox.SelectedValue.ToString(), int.Parse(MatriculaComboBox.SelectedValue.ToString())))
             {
                 MessageBox.Show("Esta materia ya fue inscrita.",
