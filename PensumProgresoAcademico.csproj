@@ -18,6 +18,7 @@
 	  <None Remove="Resources\Academic.mp4" />
 	  <None Remove="Resources\batmanWallpaper.jpg" />
 	  <None Remove="Resources\birrete.png" />
+	  <None Remove="Resources\Gray skay.mp4" />
 	  <None Remove="Resources\GraySkay.png" />
 	  <None Remove="Resources\GrayskayAnimed.mp4" />
 	  <None Remove="Resources\GrayskayAnimedLigth.mp4" />
@@ -50,6 +51,7 @@
 	<ItemGroup>
 	  <Resource Include="Resources\batmanWallpaper.jpg" />
 	  <Resource Include="Resources\birrete.png" />
+	  <Resource Include="Resources\Gray skay.mp4" />
 	  <Resource Include="Resources\GraySkay.png" />
 	  <Resource Include="Resources\GrayskayAnimed.mp4" />
 	  <Resource Include="Resources\GrayskayAnimedLigth.mp4" />
