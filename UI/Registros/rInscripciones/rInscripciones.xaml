@@ -12,12 +12,13 @@
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--TextBox Inscripcion Id y Boton-->
-            <StackPanel Orientation="Horizontal">
+            <TextBox Name="InscripcionIdTextBox" FontSize="20" Text="{Binding InscripcionId}"  Margin="5,0" materialDesign:HintAssist.Hint="Inscripcion Id" materialDesign:HintAssist.IsFloating="True" TextChanged="InscripcionIdTextBox_TextChanged"/>
+            <!--StackPanel Orientation="Horizontal"-->
                 <!--TextBox-->
-                <TextBox Name="InscripcionIdTextBox" Width="1085" FontSize="20" Text="{Binding InscripcionId}" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Inscripcion Id" materialDesign:HintAssist.IsFloating="True"/>
+                
                 <!--Boton-->
-                <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/>
-            </StackPanel>
+                <!--Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="0,23,0,0"/-->
+            <!--/-->
 
             <!--Matricula/Estudiante-->
             <ComboBox Name="MatriculaComboBox" FontSize="20" SelectedValue="{Binding Matricula}" Margin="5,0" materialDesign:HintAssist.Hint="Estudiante" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MatriculaComboBox_SelectionChanged"/>
@@ -41,7 +42,7 @@
                     <!--Panel de TextBox-->
                     <StackPanel Orientation="Horizontal">
                         <!--Materia-->
-                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged"/>
+                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Materia" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged"/>
                         <!--Horas Practicas-->
                         <TextBox Name="HorasPracticasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0"/>
 

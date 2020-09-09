@@ -40,7 +40,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
         }
 
         //Busca un registro en la base de datos
-        private void BuscarButton_Click(object sender, RoutedEventArgs e)
+        /*private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar()) { return; }
 
@@ -56,7 +56,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
                 MessageBox.Show("No hay una inscripción con este Id.", "No se encontro la Inscripción.",
                     MessageBoxButton.OK, MessageBoxImage.Information);
             }
-        }
+        }*/
 
         //Agrega una materia al detalle de la inscripcion
         private void AgregarButton_Click(object sender, RoutedEventArgs e)
@@ -236,6 +236,38 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
         {
             this.Topmost = true;
             this.Focus();
+        }
+
+        //todo: OJO CON ESTO... Al agregar el WPF aparentemente se limpia.
+        private void InscripcionIdTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(!Regex.IsMatch(InscripcionIdTextBox.Text, "^[0-9]+${1,8}")) {
+                LimpiarEnBusuqeda();
+                return;
+            }
+            var encontrado = InscripcionesBLL.Buscar(int.Parse(InscripcionIdTextBox.Text));
+
+            if (encontrado != null)
+            {
+                Inscripcion = encontrado;
+                this.DataContext = Inscripcion;
+                DetalleDataGrid.ItemsSource = Inscripcion.InscripcionesDetalles;
+            }
+            else
+            {
+                LimpiarEnBusuqeda();
+                return;
+            }
+        }
+
+        public void LimpiarEnBusuqeda()
+        {
+            DetalleDataGrid.ItemsSource = null;
+            MateriaComboBox.SelectedIndex = -1;
+            FechaDatePicker.SelectedDate = DateTime.Now;
+            CreditosSelccionadosTextBox.Clear();
+            CantidadMateriaTextBox.Clear();
+            Inscripcion = new Inscripciones();
         }
     }
 }
