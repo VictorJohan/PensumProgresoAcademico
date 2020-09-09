@@ -41,7 +41,7 @@
                     <!--Panel de TextBox-->
                     <StackPanel Orientation="Horizontal">
                         <!--Materia-->
-                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged"/>
+                        <ComboBox Name="MateriaComboBox" Width="538" SelectedValue="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Materia" materialDesign:HintAssist.IsFloating="True" SelectionChanged="MateriaComboBox_SelectionChanged"/>
                         <!--Horas Practicas-->
                         <TextBox Name="HorasPracticasDetalleTextBox" IsReadOnly="True" Width="150" FontSize="20" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Horas Practicas" materialDesign:HintAssist.IsFloating="True" Margin="21,0,0,0"/>
 
