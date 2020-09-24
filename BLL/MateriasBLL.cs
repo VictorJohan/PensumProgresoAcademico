@@ -151,6 +151,7 @@ namespace PensumProgresoAcademico.BLL
             try
             {
                 lista = contexto.Materias.ToList();
+                lista.Sort((x, y) => x.Descripcion.CompareTo(y.Descripcion));//Ordena lista
             }
             catch (Exception)
             {
