@@ -96,7 +96,6 @@ namespace PensumProgresoAcademico.BLL
         {
             Contexto contexto = new Contexto();
             Materias materia;
-
             try
             {
                 materia = contexto.Materias.Find(clave);//Busca el registro en la base de datos.
@@ -196,7 +195,6 @@ namespace PensumProgresoAcademico.BLL
             Contexto contexto = new Contexto();
             List<Materias> lista = new List<Materias>();
             Materias materia;
-
             try
             {
                 lista = contexto.Materias.ToList();

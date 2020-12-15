@@ -21,6 +21,8 @@
 	  <None Remove="Resources\colegio.png" />
 	  <None Remove="Resources\Gray skay.mp4" />
 	  <None Remove="Resources\GraySkay.png" />
+	  <None Remove="Resources\GrayskayAnimed.mp4" />
+	  <None Remove="Resources\GrayskayAnimedLigth.mp4" />
 	  <None Remove="Resources\GrayskayDarkLog.png" />
 	  <None Remove="Resources\GrayskayLogo.png" />
 	  <None Remove="Resources\inscripcion.png" />
@@ -32,6 +34,21 @@
 	  <None Remove="Resources\Progress.mp4" />
 	  <None Remove="Resources\search.png" />
 	  <None Remove="Resources\Title.mp4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\Academic.mp4">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Resources\GrayskayAnimedLigth.mp4">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Resources\My.mp4">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Resources\Progress.mp4">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -54,20 +71,20 @@
 	  <Resource Include="Resources\birrete.png">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
-	  <Resource Include="Resources\colegio.png" />
-	  <Resource Include="Resources\Gray skay.mp4">
+	  <Resource Include="Resources\colegio.png">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
+	  <Resource Include="Resources\Gray skay.mp4" />
 	  <Resource Include="Resources\GraySkay.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\GrayskayAnimed.mp4">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\GrayskayDarkLog.png">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\GrayskayLogo.png">
-	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </Resource>
-	  <Resource Include="Resources\Academic.mp4">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\inscripcion.png">
@@ -83,12 +100,6 @@
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\portada.jpg">
-	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </Resource>
-	  <Resource Include="Resources\Progress.mp4">
-	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </Resource>
-	  <Resource Include="Resources\My.mp4">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>
 	  <Resource Include="Resources\search.png">

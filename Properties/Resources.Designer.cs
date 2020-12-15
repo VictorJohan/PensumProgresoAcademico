@@ -63,6 +63,16 @@ namespace PensumProgresoAcademico.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] Academic {
+            get {
+                object obj = ResourceManager.GetObject("Academic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] birrete {
             get {
                 object obj = ResourceManager.GetObject("birrete", resourceCulture);
@@ -133,9 +143,29 @@ namespace PensumProgresoAcademico.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] My {
+            get {
+                object obj = ResourceManager.GetObject("My", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] pensum {
             get {
                 object obj = ResourceManager.GetObject("pensum", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Progress {
+            get {
+                object obj = ResourceManager.GetObject("Progress", resourceCulture);
                 return ((byte[])(obj));
             }
         }

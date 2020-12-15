@@ -81,6 +81,8 @@ namespace PensumProgresoAcademico.UI.Registros
         //Elimina un registro de la base de datos
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!ConfirmarEliminar()) { return; }
+
             if (EstudiantesBLL.Eliminar(int.Parse(MatriculaTextBox.Text)))
             {
                 MessageBox.Show("Estudiante eliminado.", "Aviso.",
@@ -176,6 +178,27 @@ namespace PensumProgresoAcademico.UI.Registros
             }
 
 
+        }
+
+        //Confirma si se vana a guardar los datos
+        public bool ConfirmarGuardar()
+        {
+            bool respuesta = (MessageBox.Show("¿Seguro que desea guardar estos datos?", "Guardar", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No);
+
+            if (respuesta) { return false; }
+
+            return true;
+        }
+
+        //Confirma si se vana a eliminar los datos
+        public bool ConfirmarEliminar()
+        {
+            
+            bool respuesta = (MessageBox.Show("¿Seguro que desea eliminar estos datos?", "Eliminar", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No);
+
+            if (respuesta) { return false; }
+
+            return true;
         }
 
         //Pregunta al usuario si realmente desea cambiar de pensum

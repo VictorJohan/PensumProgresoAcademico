@@ -47,7 +47,6 @@
             <StackPanel Orientation="Horizontal" Width="223" Margin="0, 30">
                 <!--Nuevo-->
                 <Button Name="NuevoButton" Content="Nuevo" Background="Snow" FontSize="11" Height="20" Click="NuevoButton_Click" Padding="16,1,16,4"/>
-
                 <!--Guardar-->
                 <Button Name="GuardarButton" Height="20" Background="Snow" Content="Guardar" FontSize="11" Padding="16,1,16,4" Click="GuardarButton_Click" Margin="5,0,0,0"/>
                 <!--Eliminar-->

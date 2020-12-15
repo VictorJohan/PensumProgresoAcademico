@@ -238,6 +238,57 @@ namespace PensumProgresoAcademico.BLL
 
             return lista;
         }
+        
+        //Este metodo retorna una lista de las materias con sus pre-requisitos
+        public static List<PensumDetalle> GetMaterias(int id)
+        {
+            List<PensumDetalle> lista = new List<PensumDetalle>();
+            Pensum pensum = Buscar(id);
+
+            try
+            {
+                lista = pensum.PensumDetalles;
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return lista;
+        }
+
+        //Este metodo retorna una lista de las materias si hay coicidencia con el rquisito.
+        public static List<PensumDetalle> GetMaterias(int id, string requisito)
+        {
+            List<PensumDetalle> lista = new List<PensumDetalle>();
+            Pensum pensum = Buscar(id);
+            string[] cadena;
+
+            try
+            {
+                foreach (var item in pensum.PensumDetalles)
+                {
+                    cadena = item.Prerequisitos.Split(", ");
+                    foreach (var item2 in cadena)
+                    {
+                        if(item2 == requisito)
+                        {
+                            lista.Add(item);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return lista;
+        }
 
     }
 }

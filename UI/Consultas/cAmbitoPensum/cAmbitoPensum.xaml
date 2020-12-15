@@ -1,0 +1,46 @@
+﻿<Window x:Class="PensumProgresoAcademico.UI.Consultas.cAmbitoPensum.cAmbitoPensum"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Consultas.cAmbitoPensum"
+        mc:Ignorable="d"
+        ContentRendered="Window_ContentRendered"
+        Initialized="Window_Initialized"
+        Title="Cosulta Ambito Pensum" Height="450" Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Resources/search.png">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <StackPanel Orientation="Horizontal">
+                <!--Filtro-->
+                <ComboBox Name="FiltroComboBox" Width="300" FontSize="20" HorizontalAlignment="Left" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Filtro" materialDesign:HintAssist.IsFloating="True"/>
+
+                <!--Pesum-->
+                <ComboBox Name="PensumComboBox" Width="400" FontSize="20" HorizontalAlignment="Left" Padding="2,0,0,5" materialDesign:HintAssist.Hint="Pensum" materialDesign:HintAssist.IsFloating="True" Margin="50,0,0,0"/>
+
+                <!--Criterio-->
+                <TextBox Name="CriterioTextBox" FontSize="20" Width="300" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Criterio" materialDesign:HintAssist.IsFloating="True" Height="43.1" Padding="0,-5,0,0" Margin="50,0,0,0" />
+
+                <!--Boton-->
+                <Button Name="BuscarButton" Background="Snow" Height="20" FontSize="11" Content="Buscar" Click="BuscarButton_Click" Padding="16,1,16,4" Margin="50,23,0,0"/>
+
+            </StackPanel>
+
+            <!--DataGrid-->
+            <DataGrid Name="DetalleDataGrid"  Height="340" AutoGenerateColumns="False" 
+                              AlternatingRowBackground="#FF3FB7FB"
+                              ItemsSource="{Binding PensumDetalles}" Margin="0,10,0,0">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Clave" IsReadOnly="True" Binding="{Binding Clave}"/>
+                    <DataGridTextColumn Header="Descripción" IsReadOnly="True" Binding="{Binding Materia.Descripcion}"/>
+                    <DataGridTextColumn Header="Horas Practicas" IsReadOnly="True" Binding="{Binding Materia.HorasPracticas}"/>
+                    <DataGridTextColumn Header="Horas Teoricas" IsReadOnly="True" Binding="{Binding Materia.HorasTeoricas}"/>
+                    <DataGridTextColumn Header="Creditos" IsReadOnly="True" Binding="{Binding Materia.Creditos}"/>
+                    <DataGridTextColumn Header="Pre-Requisitos" IsReadOnly="True" Binding="{Binding Prerequisitos}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+    </Grid>
+</Window>

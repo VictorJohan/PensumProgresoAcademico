@@ -42,7 +42,13 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
         //Busca un registro en la base de datos
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Validar()) { return; }
+            //Valida que el se haya ingresado un Id valido
+            if (!Regex.IsMatch(InscripcionIdTextBox.Text, "^[0-9]+${1,5}"))
+            {
+                MessageBox.Show("Asegúrese de haber introducido un Id de caracter numérico y diferente de cero.",
+                    "Id no valido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                
+            }
 
             var encontrado = InscripcionesBLL.Buscar(int.Parse(InscripcionIdTextBox.Text));
 
@@ -82,6 +88,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             HorasPracticasDetalleTextBox.Clear();
             HorasTeoricasDetalleTextBox.Clear();
             CreditosDetalleTextBox.Clear();
+            MateriaComboBox.Focus();
         }
 
         //Remueve una materia del detalle
@@ -108,6 +115,8 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar()) { return; }
+            if (!ConfirmarGuardar()) { return; }
+
 
             if (InscripcionesBLL.Guardar(Inscripcion))
             {
@@ -125,7 +134,8 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
         //Elimina un registro de la base de datos
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Validar()) { return; }
+            
+            if (!ConfirmarEliminar()) { return; }
 
             if (!Regex.IsMatch(InscripcionIdTextBox.Text, "^[1-9]+${1,5}"))
             {
@@ -173,6 +183,7 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
             HorasPracticasDetalleTextBox.Text = Materia.HorasPracticas.ToString();
             HorasTeoricasDetalleTextBox.Text = Materia.HorasTeoricas.ToString();
             CreditosDetalleTextBox.Text = Materia.Creditos.ToString();
+            AgregarButton.Focus();
         }
 
         //Limpia el WPF
@@ -186,12 +197,53 @@ namespace PensumProgresoAcademico.UI.Registros.rInscripciones
         public bool Validar()
         {
             //Valida que el se haya ingresado un Id valido
-            if(!Regex.IsMatch(InscripcionIdTextBox.Text, "^[1-9]+${1,5}"))
+            if(!Regex.IsMatch(InscripcionIdTextBox.Text, "^[0-9]+${1,5}"))
             {
                 MessageBox.Show("Asegúrese de haber introducido un Id de caracter numérico y diferente de cero.", 
                     "Id no valido", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
+
+            if(MatriculaComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Asegúrese de haber seleccionado un estudiante.",
+                    "Estudiante no selecionado.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            if(Inscripcion.InscripcionesDetalles.Count == 0)
+            {
+                MessageBox.Show("Debe de haber por lo menos una materia para realizar una incripción.",
+                    "No hay materias selecionadas.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        //Confirma si se vana a guardar los datos
+        public bool ConfirmarGuardar()
+        {
+            bool respuesta = (MessageBox.Show("¿Seguro que desea guardar estos datos?", "Guardar", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No);
+
+            if (respuesta) { return false; }
+
+            return true;
+        }
+
+        //Confirma si se vana a eliminar los datos
+        public bool ConfirmarEliminar()
+        {
+            if (Inscripcion.InscripcionesDetalles.Count == 0)
+            {
+                MessageBox.Show("No hay nada que eliminar.",
+                    "Registro vacio.", MessageBoxButton.OK, MessageBoxImage.Information);
+                return false;
+            }
+
+            bool respuesta = (MessageBox.Show("¿Seguro que desea eliminar estos datos?", "Eliminar", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No);
+
+            if (respuesta) { return false; }
 
             return true;
         }

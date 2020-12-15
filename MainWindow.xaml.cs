@@ -47,6 +47,7 @@ namespace PensumProgresoAcademico
             menuConsulta.Add(new SubItem("Pensum"));
             menuConsulta.Add(new SubItem("Estudiante"));
             menuConsulta.Add(new SubItem("Inscripción"));
+            menuConsulta.Add(new SubItem("Ámbito de Pensum"));
             var item2 = new ItemMenu("Consultas", menuConsulta, PackIconKind.Search);
 
             MenuStackPanel.Children.Add(new UserControlMenuItem(item));

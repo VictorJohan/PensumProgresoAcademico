@@ -4,18 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
         xmlns:local="clr-namespace:PensumProgresoAcademico.UI.Registros.rMaterias"
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Initialized="Window_Initialized"
         Title="Registro Materias" Height="400" Width="630" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="\Resources\materia.png">
+
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <!--TextBox Clave y Boton Buscar-->
 
             <TextBox Name="ClaveTextBox" Width="550" Text="{Binding Clave}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Clave" materialDesign:HintAssist.IsFloating="True" TextChanged="ClaveTextBox_TextChanged"/>
-
-
 
             <!--Descripcion-->
             <TextBox Name="DescripcionTextBox" Width="550" Text="{Binding Descripcion}" FontSize="20" HorizontalAlignment="Left" Margin="5,0" materialDesign:HintAssist.Hint="Descripción" materialDesign:HintAssist.IsFloating="True"/>
@@ -43,4 +43,5 @@
 
         </StackPanel>
     </Grid>
+    
 </Window>

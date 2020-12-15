@@ -38,8 +38,8 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
         //Guarda un registro en la base de datos.
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Validar())
-                return;
+            if (!Validar()) { return; }
+            if (!ConfirmarGuardar()) { return; }
 
             if (MateriasBLL.Guardar(Materia))
             {
@@ -57,6 +57,8 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
         //Elimina un registro de la base de datos.
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!ConfirmarEliminar()) { return; }
+
             if (MateriasBLL.Eliminar(ClaveTextBox.Text))
             {
                 MessageBox.Show("Materia eliminada.", "Aviso.",
@@ -153,9 +155,30 @@ namespace PensumProgresoAcademico.UI.Registros.rMaterias
             return true;
         }
 
+        //Confirma si se vana a guardar los datos
+        public bool ConfirmarGuardar()
+        {
+            bool respuesta = (MessageBox.Show("¿Seguro que desea guardar estos datos?", "Guardar", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No);
+
+            if (respuesta) { return false; }
+
+            return true;
+        }
+
+        //Confirma si se vana a eliminar los datos
+        public bool ConfirmarEliminar()
+        {
+            bool respuesta = (MessageBox.Show("¿Seguro que desea eliminar estos datos?", "Eliminar", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No);
+
+            if (respuesta) { return false; }
+
+            return true;
+        }
+
+        //todo: recuerda
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            this.Topmost = false;
+            //this.Topmost = false;
             this.Focus();
         }
 

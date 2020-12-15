@@ -19,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PensumProgresoAcademico.UI.Consultas.cAmbitoPensum;
 
 namespace PensumProgresoAcademico
 {
@@ -28,6 +29,7 @@ namespace PensumProgresoAcademico
     public partial class UserControlMenuItem : UserControl
     {
         ItemMenu aux;
+
         public UserControlMenuItem(ItemMenu itemMenu)
         {
             InitializeComponent();
@@ -47,8 +49,9 @@ namespace PensumProgresoAcademico
                 switch (a.Name)
                 {
                     case "Materia":
-                        rMaterias rMaterias = new rMaterias();
-                        rMaterias.Show();
+                        rMaterias m = new rMaterias();
+                        m.Show();
+
                         ListViewMenu.SelectedIndex = -1;
                         break;
                     case "Pensum":
@@ -88,6 +91,11 @@ namespace PensumProgresoAcademico
                     case "Inscripción":
                         cInscripciones cInscripciones = new cInscripciones();
                         cInscripciones.Show();
+                        ListViewMenu.SelectedIndex = -1;
+                        break;
+                    case "Ámbito de Pensum":
+                        cAmbitoPensum cAmbitoPensum = new cAmbitoPensum();
+                        cAmbitoPensum.Show();
                         ListViewMenu.SelectedIndex = -1;
                         break;
                 }

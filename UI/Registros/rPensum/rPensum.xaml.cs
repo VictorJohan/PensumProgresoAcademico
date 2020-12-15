@@ -76,6 +76,7 @@ namespace PensumProgresoAcademico.UI.Registros.rPensum
 
             Cargar();
             LimpiarDetalle();
+            ClaveMateriaTextBox.Focus();
         }
 
         //Elimina un materia del Pensum
@@ -109,8 +110,9 @@ namespace PensumProgresoAcademico.UI.Registros.rPensum
         //Guarda un nuevo Pensum en la base de datos.
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Validar())
-                return;
+            if (!Validar()) { return; }
+            if (!ConfirmarGuardar()) { return; }
+
 
             if (PensumBLL.Guardar(Pensum))
             {
@@ -128,10 +130,11 @@ namespace PensumProgresoAcademico.UI.Registros.rPensum
         //Elimina un Pensum de la base de datos.
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Regex.IsMatch(PensumIdTextBox.Text, "^[1-9]+${1,5}"))
+            if (!ConfirmarEliminar()) { return; }
+
+            if (!Regex.IsMatch(PensumIdTextBox.Text, "^[0-9]+${1,5}"))
             {
-                MessageBox.Show("El Id que ha ingresado no es válido.\nVerifique que haya ingresado un caracter numerico y que este " +
-                    "sea diferente de cero.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("El Id que ha ingresado no es válido.\nVerifique que haya ingresado un caracter numerico.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -159,6 +162,8 @@ namespace PensumProgresoAcademico.UI.Registros.rPensum
                 HorasPracticasDetalleTextBox.Text = Materias.HorasPracticas.ToString();
                 HorasTeoricasDetalleTextBox.Text = Materias.HorasTeoricas.ToString();
                 CreditosDetalleTextBox.Text = Materias.Creditos.ToString();
+                PrerequisitosTextBox.Focus();
+                
             }
             else
             {
@@ -279,6 +284,33 @@ namespace PensumProgresoAcademico.UI.Registros.rPensum
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
+
+            return true;
+        }
+
+        //Confirma si se vana a guardar los datos
+        public bool ConfirmarGuardar()
+        {
+            bool respuesta = (MessageBox.Show("¿Seguro que desea guardar estos datos?", "Guardar", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No);
+
+            if (respuesta) { return false; }
+
+            return true;
+        }
+
+        //Confirma si se vana a eliminar los datos
+        public bool ConfirmarEliminar()
+        {
+            if (CarreraTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("No hay nada que eliminar.",
+                    "Registro vacio.", MessageBoxButton.OK, MessageBoxImage.Information);
+                return false;
+            }
+
+            bool respuesta = (MessageBox.Show("¿Seguro que desea eliminar estos datos?", "Eliminar", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.No);
+
+            if (respuesta) { return false; }
 
             return true;
         }
