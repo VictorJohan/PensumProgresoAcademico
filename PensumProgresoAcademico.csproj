@@ -5,7 +5,7 @@
 		<StartworkinDirectory>$(MSBuildProjectDirectory)</StartworkinDirectory>
 
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<TargetFramework>net5.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<AssemblyName>Progreso Academico</AssemblyName>
 		<ApplicationIcon>colegioIco.ico</ApplicationIcon>
