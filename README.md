@@ -9,5 +9,5 @@ Esta aplicación está compuesta por varios módulos:<br>
 -Registro de Inscripción<br>
 
 Con estos módulos se planea poder conocer que tan avanzado vas en la carrera.<br>
-
+<hr>
 <strong>NOTA: Este es un proyecto con fines de práctica, por lo tanto, no está apto para su comercialización.</strong>
